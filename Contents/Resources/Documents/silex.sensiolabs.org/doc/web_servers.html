@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>Webserver Configuration - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../documentation">DOCUMENTATION</a></li>
+              <li><a href="../download">DOWNLOAD</a></li>
+              <li><a href="../development">DEVELOPMENT</a></li>
+              <li><a href="../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="web_servers.html#">Webserver Configuration</a><ul>
+<li><a class="reference internal" href="web_servers.html#apache">Apache</a></li>
+<li><a class="reference internal" href="web_servers.html#nginx">nginx</a></li>
+<li><a class="reference internal" href="web_servers.html#iis">IIS</a></li>
+<li><a class="reference internal" href="web_servers.html#lighttpd">Lighttpd</a></li>
+<li><a class="reference internal" href="web_servers.html#php-5-4">PHP 5.4</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/web_servers.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="webserver-configuration">
+<h1>Webserver Configuration<a class="headerlink" href="web_servers.html#webserver-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="apache">
+<h2>Apache<a class="headerlink" href="web_servers.html#apache" title="Permalink to this headline">¶</a></h2>
+<p>If you are using Apache you can use a <tt class="docutils literal"><code>.htaccess</code></tt> file for this:</p>
+<div class="literal-block"><div class="highlight-apache"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="nt">&lt;IfModule</span> <span class="s">mod_rewrite.c</span><span class="nt">&gt;</span>
+    <span class="nb">Options</span> -MultiViews
+
+    <span class="nb">RewriteEngine</span> <span class="k">On</span>
+    <span class="c">#RewriteBase /path/to/app</span>
+    <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-f
+    <span class="nb">RewriteRule</span> ^ index.php [L]
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">If your site is not at the webroot level you will have to uncomment the
+<tt class="docutils literal"><code>RewriteBase</code></tt> statement and adjust the path to point to your directory,
+relative from the webroot.</p>
+</div></div>
+<p>Alternatively, if you use Apache 2.2.16 or higher, you can use the
+<a class="reference external" href="http://www.adayinthelifeof.nl/2012/01/21/apaches-fallbackresource-your-new-htaccess-command/">FallbackResource directive</a> so make your .htaccess even easier:</p>
+<div class="literal-block"><div class="highlight-apache"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nb">FallbackResource</span> <span class="sx">/index.php</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">If your site is not at the webroot level you will have to adjust the path to
+point to your directory, relative from the webroot.</p>
+</div></div>
+</div>
+<div class="section" id="nginx">
+<h2>nginx<a class="headerlink" href="web_servers.html#nginx" title="Permalink to this headline">¶</a></h2>
+<p>If you are using nginx, configure your vhost to forward non-existent
+resources to <tt class="docutils literal"><code>index.php</code></tt>:</p>
+<div class="literal-block"><div class="highlight-nginx"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">server</span> <span class="p">{</span>
+    <span class="c1">#site root is redirected to the app boot script</span>
+    <span class="kn">location</span> <span class="p">=</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">try_files</span> <span class="s">@site</span> <span class="s">@site</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">#all other locations try other files first and go to our front controller if none of them exists</span>
+    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri/</span> <span class="s">@site</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">#return 404 for all php files as we do have a front controller</span>
+    <span class="kn">location</span> <span class="p">~</span> <span class="sr">\.php$</span> <span class="p">{</span>
+        <span class="kn">return</span> <span class="mi">404</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kn">location</span> <span class="s">@site</span> <span class="p">{</span>
+        <span class="kn">fastcgi_pass</span>   <span class="s">unix:/var/run/php-fpm/www.sock</span><span class="p">;</span>
+        <span class="kn">include</span> <span class="s">fastcgi_params</span><span class="p">;</span>
+        <span class="kn">fastcgi_param</span>  <span class="s">SCRIPT_FILENAME</span> <span class="nv">$document_root/index.php</span><span class="p">;</span>
+        <span class="c1">#uncomment when running via https</span>
+        <span class="c1">#fastcgi_param HTTPS on;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="iis">
+<h2>IIS<a class="headerlink" href="web_servers.html#iis" title="Permalink to this headline">¶</a></h2>
+<p>If you are using the Internet Information Services from Windows, you can use
+this sample <tt class="docutils literal"><code>web.config</code></tt> file:</p>
+<div class="literal-block"><div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;system.webServer&gt;</span>
+        <span class="nt">&lt;defaultDocument&gt;</span>
+            <span class="nt">&lt;files&gt;</span>
+                <span class="nt">&lt;clear</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;add</span> <span class="na">value=</span><span class="s">&quot;index.php&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/files&gt;</span>
+        <span class="nt">&lt;/defaultDocument&gt;</span>
+        <span class="nt">&lt;rewrite&gt;</span>
+            <span class="nt">&lt;rules&gt;</span>
+                <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">&quot;Silex Front Controller&quot;</span> <span class="na">stopProcessing=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;match</span> <span class="na">url=</span><span class="s">&quot;^(.*)$&quot;</span> <span class="na">ignoreCase=</span><span class="s">&quot;false&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;conditions</span> <span class="na">logicalGrouping=</span><span class="s">&quot;MatchAll&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;add</span> <span class="na">input=</span><span class="s">&quot;{REQUEST_FILENAME}&quot;</span> <span class="na">matchType=</span><span class="s">&quot;IsFile&quot;</span> <span class="na">ignoreCase=</span><span class="s">&quot;false&quot;</span> <span class="na">negate=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/conditions&gt;</span>
+                    <span class="nt">&lt;action</span> <span class="na">type=</span><span class="s">&quot;Rewrite&quot;</span> <span class="na">url=</span><span class="s">&quot;index.php&quot;</span> <span class="na">appendQueryString=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/rule&gt;</span>
+            <span class="nt">&lt;/rules&gt;</span>
+        <span class="nt">&lt;/rewrite&gt;</span>
+    <span class="nt">&lt;/system.webServer&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="lighttpd">
+<h2>Lighttpd<a class="headerlink" href="web_servers.html#lighttpd" title="Permalink to this headline">¶</a></h2>
+<p>If you are using lighttpd, use this sample <tt class="docutils literal"><code>simple-vhost</code></tt> as a starting
+point:</p>
+<div class="literal-block"><div class="highlight-lighttpd"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">server.document-root</span> <span class="o">=</span> <span class="s2">&quot;/path/to/app&quot;</span>
+
+<span class="k">url.rewrite-once</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="c1"># configure some static files</span>
+    <span class="s2">&quot;^/assets/.+&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;$0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;^/favicon\.ico$&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;$0&quot;</span><span class="p">,</span>
+
+    <span class="s2">&quot;^(/[^\?]*)(\?.*)?&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;/index.php$1$2&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="php-5-4">
+<h2>PHP 5.4<a class="headerlink" href="web_servers.html#php-5-4" title="Permalink to this headline">¶</a></h2>
+<p>PHP 5.4 ships with a built-in webserver for development. This server allows
+you to run silex without any configuration. However, in order to serve static
+files, you'll have to make sure your front controller returns false in that
+case:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// web/index.php</span>
+
+<span class="nv">$filename</span> <span class="o">=</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="nb">preg_replace</span><span class="p">(</span><span class="s1">&#39;#(\?.*)$#&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_URI&#39;</span><span class="p">]);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">php_sapi_name</span><span class="p">()</span> <span class="o">===</span> <span class="s1">&#39;cli-server&#39;</span> <span class="o">&amp;&amp;</span> <span class="nb">is_file</span><span class="p">(</span><span class="nv">$filename</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$app</span> <span class="o">=</span> <span class="k">require</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/../src/app.php&#39;</span><span class="p">;</span>
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Assuming your front controller is at <tt class="docutils literal"><code>web/index.php</code></tt>, you can start the
+server from the command-line with this command:</p>
+<div class="literal-block"><div class="highlight-text"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>$ php -S localhost:8080 -t web web/index.php
+</pre></div>
+</td></tr></table></div></div>
+<p>Now the application should be running at <tt class="docutils literal"><code>http://localhost:8080</code></tt>.</p>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">This server is for development only. It is <strong>not</strong> recommended to use it
+in production.</p>
+</div></div>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="SecurityServiceProvider" href="providers/security.html">
+                    &laquo;&nbsp;SecurityServiceProvider
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="Changelog" href="changelog.html">
+                    Changelog&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

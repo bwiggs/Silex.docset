@@ -1,0 +1,1002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>Usage - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../documentation">DOCUMENTATION</a></li>
+              <li><a href="../download">DOWNLOAD</a></li>
+              <li><a href="../development">DEVELOPMENT</a></li>
+              <li><a href="../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="usage.html#">Usage</a><ul>
+<li><a class="reference internal" href="usage.html#installation">Installation</a></li>
+<li><a class="reference internal" href="usage.html#upgrading">Upgrading</a></li>
+<li><a class="reference internal" href="usage.html#bootstrap">Bootstrap</a></li>
+<li><a class="reference internal" href="usage.html#routing">Routing</a><ul>
+<li><a class="reference internal" href="usage.html#example-get-route">Example GET route</a></li>
+<li><a class="reference internal" href="usage.html#dynamic-routing">Dynamic routing</a></li>
+<li><a class="reference internal" href="usage.html#example-post-route">Example POST route</a></li>
+<li><a class="reference internal" href="usage.html#other-methods">Other methods</a></li>
+<li><a class="reference internal" href="usage.html#route-variables">Route variables</a></li>
+<li><a class="reference internal" href="usage.html#route-variables-converters">Route variables converters</a></li>
+<li><a class="reference internal" href="usage.html#requirements">Requirements</a></li>
+<li><a class="reference internal" href="usage.html#default-values">Default values</a></li>
+<li><a class="reference internal" href="usage.html#named-routes">Named routes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="usage.html#global-configuration">Global Configuration</a></li>
+<li><a class="reference internal" href="usage.html#error-handlers">Error handlers</a></li>
+<li><a class="reference internal" href="usage.html#redirects">Redirects</a></li>
+<li><a class="reference internal" href="usage.html#forwards">Forwards</a></li>
+<li><a class="reference internal" href="usage.html#json">JSON</a></li>
+<li><a class="reference internal" href="usage.html#streaming">Streaming</a></li>
+<li><a class="reference internal" href="usage.html#traits">Traits</a></li>
+<li><a class="reference internal" href="usage.html#security">Security</a><ul>
+<li><a class="reference internal" href="usage.html#escaping">Escaping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/usage.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="usage.html#usage" title="Permalink to this headline">¶</a></h1>
+<p>This chapter describes how to use Silex.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="usage.html#installation" title="Permalink to this headline">¶</a></h2>
+<p>If you want to get started fast, <a class="reference external" href="../download">download</a> Silex as an archive and extract
+it, you should have the following directory structure:</p>
+<div class="literal-block"><div class="highlight-text"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre>├── composer.json
+├── composer.lock
+├── vendor
+│   └── ...
+└── web
+    └── index.php
+</pre></div>
+</td></tr></table></div></div>
+<p>If you want more flexibility, use Composer instead. Create a
+<tt class="docutils literal"><code>composer.json</code></tt>:</p>
+<div class="literal-block"><div class="highlight-json"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;silex/silex&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.*@dev&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>And run Composer to install Silex and all its dependencies:</p>
+<div class="literal-block"><div class="highlight-bash"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span>curl -s http://getcomposer.org/installer | php
+<span class="nv">$ </span>php composer.phar install
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
+<p class="last">By default, Silex relies on the stable Symfony components. If you want to
+use their master version instead, add <tt class="docutils literal"><code>&quot;minimum-stability&quot;: &quot;dev&quot;</code></tt> in
+your <tt class="docutils literal"><code>composer.json</code></tt> file.</p>
+</div></div>
+</div>
+<div class="section" id="upgrading">
+<h2>Upgrading<a class="headerlink" href="usage.html#upgrading" title="Permalink to this headline">¶</a></h2>
+<p>Upgrading Silex to the latest version is as easy as running the <tt class="docutils literal"><code>update</code></tt>
+command:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="err">$</span> <span class="nx">php</span> <span class="nx">composer</span><span class="o">.</span><span class="nx">phar</span> <span class="nx">update</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="bootstrap">
+<h2>Bootstrap<a class="headerlink" href="usage.html#bootstrap" title="Permalink to this headline">¶</a></h2>
+<p>To bootstrap Silex, all you need to do is require the <tt class="docutils literal"><code>vendor/autoload.php</code></tt>
+file and create an instance of <tt class="docutils literal"><code>Silex\Application</code></tt>. After your controller
+definitions, call the <tt class="docutils literal"><code>run</code></tt> method on your application:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// web/index.php</span>
+
+<span class="k">require_once</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/../vendor/autoload.php&#39;</span><span class="p">;</span>
+
+<span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Silex\Application</span><span class="p">();</span>
+
+<span class="c1">// definitions</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Then, you have to configure your web server (read the <a class="reference internal" href="web_servers.html"><em>dedicated chapter</em></a> for more information).</p>
+<div class="admonition-wrapper">
+<div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
+<p>When developing a website, you might want to turn on the debug mode to
+ease debugging:</p>
+<div class="literal-block"><div class="last highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div></div>
+</div></div>
+<div class="admonition-wrapper">
+<div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
+<p>If your application is hosted behind a reverse proxy and you want Silex to
+trust the <tt class="docutils literal"><code>X-Forwarded-For*</code></tt> headers, you will need to run your
+application like this:</p>
+<div class="literal-block"><div class="last highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
+
+<span class="nx">Request</span><span class="o">::</span><span class="na">trustProxyData</span><span class="p">();</span>
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div></div>
+</div></div>
+</div>
+<div class="section" id="routing">
+<h2>Routing<a class="headerlink" href="usage.html#routing" title="Permalink to this headline">¶</a></h2>
+<p>In Silex you define a route and the controller that is called when that
+route is matched.</p>
+<p>A route pattern consists of:</p>
+<ul class="simple">
+<li><em>Pattern</em>: The route pattern defines a path that points to a resource. The
+pattern can include variable parts and you are able to set RegExp
+requirements for them.</li>
+<li><em>Method</em>: One of the following HTTP methods: <tt class="docutils literal"><code>GET</code></tt>, <tt class="docutils literal"><code>POST</code></tt>, <tt class="docutils literal"><code>PUT</code></tt>
+<tt class="docutils literal"><code>DELETE</code></tt>. This describes the interaction with the resource. Commonly only
+<tt class="docutils literal"><code>GET</code></tt> and <tt class="docutils literal"><code>POST</code></tt> are used, but it is possible to use the others as well.</li>
+</ul>
+<p>The controller is defined using a closure like this:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Closures are anonymous functions that may import state from outside of their
+definition. This is different from globals, because the outer state does not
+have to be global. For instance, you could define a closure in a function and
+import local variables of that function.</p>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">Closures that do not import scope are referred to as lambdas. Because in
+PHP all anonymous functions are instances of the <tt class="docutils literal"><code>Closure</code></tt> class, we
+will not make a distinction here.</p>
+</div></div>
+<p>The return value of the closure becomes the content of the page.</p>
+<p>There is also an alternate way for defining controllers using a class method.
+The syntax for that is <tt class="docutils literal"><code>ClassName::methodName</code></tt>. Static methods are also
+possible.</p>
+<div class="section" id="example-get-route">
+<h3>Example GET route<a class="headerlink" href="usage.html#example-get-route" title="Permalink to this headline">¶</a></h3>
+<p>Here is an example definition of a <tt class="docutils literal"><code>GET</code></tt> route:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$blogPosts</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="mi">1</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;date&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;2011-03-29&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;author&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;igorw&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;title&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Using Silex&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">);</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$blogPosts</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$blogPosts</span> <span class="k">as</span> <span class="nv">$post</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$output</span> <span class="o">.=</span> <span class="nv">$post</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span>
+        <span class="nv">$output</span> <span class="o">.=</span> <span class="s1">&#39;&lt;br /&gt;&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nv">$output</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Visiting <tt class="docutils literal"><code>/blog</code></tt> will return a list of blog post titles. The <tt class="docutils literal"><code>use</code></tt>
+statement means something different in this context. It tells the closure to
+import the $blogPosts variable from the outer scope. This allows you to use it
+from within the closure.</p>
+</div>
+<div class="section" id="dynamic-routing">
+<h3>Dynamic routing<a class="headerlink" href="usage.html#dynamic-routing" title="Permalink to this headline">¶</a></h3>
+<p>Now, you can create another controller for viewing individual blog posts:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Silex\Application</span> <span class="nv">$app</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$blogPosts</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$blogPosts</span><span class="p">[</span><span class="nv">$id</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Post </span><span class="si">$id</span><span class="s2"> does not exist.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nv">$post</span> <span class="o">=</span> <span class="nv">$blogPosts</span><span class="p">[</span><span class="nv">$id</span><span class="p">];</span>
+
+    <span class="k">return</span>  <span class="s2">&quot;&lt;h1&gt;</span><span class="si">{</span><span class="nv">$post</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/h1&gt;&quot;</span><span class="o">.</span>
+            <span class="s2">&quot;&lt;p&gt;</span><span class="si">{</span><span class="nv">$post</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/p&gt;&quot;</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>This route definition has a variable <tt class="docutils literal"><code>{id}</code></tt> part which is passed to the
+closure.</p>
+<p>When the post does not exist, we are using <tt class="docutils literal"><code>abort()</code></tt> to stop the request
+early. It actually throws an exception, which we will see how to handle later
+on.</p>
+</div>
+<div class="section" id="example-post-route">
+<h3>Example POST route<a class="headerlink" href="usage.html#example-post-route" title="Permalink to this headline">¶</a></h3>
+<p>POST routes signify the creation of a resource. An example for this is a
+feedback form. We will use the <tt class="docutils literal"><code>mail</code></tt> function to send an e-mail:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;/feedback&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$message</span> <span class="o">=</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">);</span>
+    <span class="nb">mail</span><span class="p">(</span><span class="s1">&#39;feedback@yoursite.com&#39;</span><span class="p">,</span> <span class="s1">&#39;[YourSite] Feedback&#39;</span><span class="p">,</span> <span class="nv">$message</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">&#39;Thank you for your feedback!&#39;</span><span class="p">,</span> <span class="mi">201</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>It is pretty straightforward.</p>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">There is a <a class="reference internal" href="providers/swiftmailer.html"><em>SwiftmailerServiceProvider</em></a>
+included that you can use instead of <tt class="docutils literal"><code>mail()</code></tt>.</p>
+</div></div>
+<p>The current <tt class="docutils literal"><code>request</code></tt> is automatically injected by Silex to the Closure
+thanks to the type hinting. It is an instance of <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpFoundation/Request.html">Request</a>,
+so you can fetch variables using the request <tt class="docutils literal"><code>get</code></tt> method.</p>
+<p>Instead of returning a string we are returning an instance of <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpFoundation/Response.html">Response</a>.
+This allows setting an HTTP status code, in this case it is set to <tt class="docutils literal"><code>201
+Created</code></tt>.</p>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">Silex always uses a <tt class="docutils literal"><code>Response</code></tt> internally, it converts strings to
+responses with status code <tt class="docutils literal"><code>200 Ok</code></tt>.</p>
+</div></div>
+</div>
+<div class="section" id="other-methods">
+<h3>Other methods<a class="headerlink" href="usage.html#other-methods" title="Permalink to this headline">¶</a></h3>
+<p>You can create controllers for most HTTP methods. Just call one of these
+methods on your application: <tt class="docutils literal"><code>get</code></tt>, <tt class="docutils literal"><code>post</code></tt>, <tt class="docutils literal"><code>put</code></tt>, <tt class="docutils literal"><code>delete</code></tt>. You can
+also call <tt class="docutils literal"><code>match</code></tt>, which will match all methods:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">match</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>You can then restrict the allowed methods via the <tt class="docutils literal"><code>method</code></tt> method:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">match</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="s1">&#39;PATCH&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>You can match multiple methods with one controller using regex syntax:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">match</span><span class="p">(</span><span class="s1">&#39;/blog&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="s1">&#39;PUT|POST&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">The order in which the routes are defined is significant. The first
+matching route will be used, so place more generic routes at the bottom.</p>
+</div></div>
+</div>
+<div class="section" id="route-variables">
+<h3>Route variables<a class="headerlink" href="usage.html#route-variables" title="Permalink to this headline">¶</a></h3>
+<p>As it has been shown before you can define variable parts in a route like
+this:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>It is also possible to have more than one variable part, just make sure the
+closure arguments match the names of the variable parts:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{postId}/{commentId}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$postId</span><span class="p">,</span> <span class="nv">$commentId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>While it's not suggested, you could also do this (note the switched
+arguments):</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{postId}/{commentId}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$commentId</span><span class="p">,</span> <span class="nv">$postId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>You can also ask for the current Request and Application objects:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Application</span> <span class="nv">$app</span><span class="p">,</span> <span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p>Note for the Application and Request objects, Silex does the injection
+based on the type hinting and not on the variable name:</p>
+<div class="literal-block"><div class="last highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Application</span> <span class="nv">$foo</span><span class="p">,</span> <span class="nx">Request</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+</div></div>
+</div>
+<div class="section" id="route-variables-converters">
+<h3>Route variables converters<a class="headerlink" href="usage.html#route-variables-converters" title="Permalink to this headline">¶</a></h3>
+<p>Before injecting the route variables into the controller, you can apply some
+converters:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/user/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="nv">$id</span><span class="p">;</span> <span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>This is useful when you want to convert route variables to objects as it
+allows to reuse the conversion code across different controllers:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$userProvider</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/user/{user}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">User</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="nv">$userProvider</span><span class="p">);</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/user/{user}/edit&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">User</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="nv">$userProvider</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>The converter callback also receives the <tt class="docutils literal"><code>Request</code></tt> as its second argument:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$callback</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$post</span><span class="p">,</span> <span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Post</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">attributes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/{id}/{slug}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Post</span> <span class="nv">$post</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="nv">$callback</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="usage.html#requirements" title="Permalink to this headline">¶</a></h3>
+<p>In some cases you may want to only match certain expressions. You can define
+requirements using regular expressions by calling <tt class="docutils literal"><code>assert</code></tt> on the
+<tt class="docutils literal"><code>Controller</code></tt> object, which is returned by the routing methods.</p>
+<p>The following will make sure the <tt class="docutils literal"><code>id</code></tt> argument is numeric, since <tt class="docutils literal"><code>\d+</code></tt>
+matches any amount of digits:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">assert</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;\d+&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>You can also chain these calls:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{postId}/{commentId}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$postId</span><span class="p">,</span> <span class="nv">$commentId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">assert</span><span class="p">(</span><span class="s1">&#39;postId&#39;</span><span class="p">,</span> <span class="s1">&#39;\d+&#39;</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">assert</span><span class="p">(</span><span class="s1">&#39;commentId&#39;</span><span class="p">,</span> <span class="s1">&#39;\d+&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="default-values">
+<h3>Default values<a class="headerlink" href="usage.html#default-values" title="Permalink to this headline">¶</a></h3>
+<p>You can define a default value for any route variable by calling <tt class="docutils literal"><code>value</code></tt> on
+the <tt class="docutils literal"><code>Controller</code></tt> object:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/{pageName}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$pageName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">value</span><span class="p">(</span><span class="s1">&#39;pageName&#39;</span><span class="p">,</span> <span class="s1">&#39;index&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>This will allow matching <tt class="docutils literal"><code>/</code></tt>, in which case the <tt class="docutils literal"><code>pageName</code></tt> variable will
+have the value <tt class="docutils literal"><code>index</code></tt>.</p>
+</div>
+<div class="section" id="named-routes">
+<h3>Named routes<a class="headerlink" href="usage.html#named-routes" title="Permalink to this headline">¶</a></h3>
+<p>Some providers (such as <tt class="docutils literal"><code>UrlGeneratorProvider</code></tt>) can make use of named
+routes. By default Silex will generate a route name for you, that cannot
+really be used. You can give a route a name by calling <tt class="docutils literal"><code>bind</code></tt> on the
+<tt class="docutils literal"><code>Controller</code></tt> object that is returned by the routing methods:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">bind</span><span class="p">(</span><span class="s1">&#39;homepage&#39;</span><span class="p">);</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">bind</span><span class="p">(</span><span class="s1">&#39;blog_post&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">It only makes sense to name routes if you use providers that make use of
+the <tt class="docutils literal"><code>RouteCollection</code></tt>.</p>
+</div></div>
+</div>
+</div>
+<div class="section" id="global-configuration">
+<h2>Global Configuration<a class="headerlink" href="usage.html#global-configuration" title="Permalink to this headline">¶</a></h2>
+<p>If a controller setting must be applied to all controllers (a converter, a
+middleware, a requirement, or a default value), you can configure it on
+<tt class="docutils literal"><code>$app['controllers']</code></tt>, which holds all application controllers:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;controllers&#39;</span><span class="p">]</span>
+    <span class="o">-&gt;</span><span class="na">value</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">assert</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;\d+&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">requireHttps</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// ... })</span>
+    <span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// ... })</span>
+<span class="p">;</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>These settings are applied to already registered controllers and they become
+the defaults for new controllers.</p>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">The global configuration does not apply to controller providers you might
+mount as they have their own global configuration (see the Modularity
+paragraph below).</p>
+</div></div>
+</div>
+<div class="section" id="error-handlers">
+<h2>Error handlers<a class="headerlink" href="usage.html#error-handlers" title="Permalink to this headline">¶</a></h2>
+<p>If some part of your code throws an exception you will want to display some
+kind of error page to the user. This is what error handlers do. You can also
+use them to do additional things, such as logging.</p>
+<p>To register an error handler, pass a closure to the <tt class="docutils literal"><code>error</code></tt> method which
+takes an <tt class="docutils literal"><code>Exception</code></tt> argument and returns a response:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">,</span> <span class="nv">$code</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">&#39;We are sorry, but something went terribly wrong.&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>You can also check for specific errors by using the <tt class="docutils literal"><code>$code</code></tt> argument, and
+handle them differently:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">,</span> <span class="nv">$code</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nv">$code</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">404</span><span class="o">:</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="s1">&#39;The requested page could not be found.&#39;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="s1">&#39;We are sorry, but something went terribly wrong.&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p>As Silex ensures that the Response status code is set to the most
+appropriate one depending on the exception, setting the status on the
+response won't work. If you want to overwrite the status code (which you
+should not without a good reason), set the <tt class="docutils literal"><code>X-Status-Code</code></tt> header:</p>
+<div class="literal-block"><div class="last highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span> <span class="mi">404</span> <span class="cm">/* ignored */</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;X-Status-Code&#39;</span> <span class="o">=&gt;</span> <span class="mi">200</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div></div>
+</div></div>
+<p>You can restrict an error handler to only handle some Exception classes by
+setting a more specific type hint for the Closure argument:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">\LogicException</span> <span class="nv">$e</span><span class="p">,</span> <span class="nv">$code</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// this handler will only \LogicException exceptions</span>
+    <span class="c1">// and exceptions that extends \LogicException</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>If you want to set up logging you can use a separate error handler for that.
+Just make sure you register it before the response error handlers, because
+once a response is returned, the following handlers are ignored.</p>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">Silex ships with a provider for <a class="reference external" href="https://github.com/Seldaek/monolog">Monolog</a> which handles logging of errors.
+Check out the <em>Providers</em> chapter for details.</p>
+</div></div>
+<div class="admonition-wrapper">
+<div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
+<p>Silex comes with a default error handler that displays a detailed error
+message with the stack trace when <strong>debug</strong> is true, and a simple error
+message otherwise. Error handlers registered via the <tt class="docutils literal"><code>error()</code></tt> method
+always take precedence but you can keep the nice error messages when debug
+is turned on like this:</p>
+<div class="literal-block"><div class="last highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">,</span> <span class="nv">$code</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// logic to handle the error and return a Response</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+</div></div>
+<p>The error handlers are also called when you use <tt class="docutils literal"><code>abort</code></tt> to abort a request
+early:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/blog/show/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Silex\Application</span> <span class="nv">$app</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$blogPosts</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$blogPosts</span><span class="p">[</span><span class="nv">$id</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">&quot;Post </span><span class="si">$id</span><span class="s2"> does not exist.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="o">...</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="redirects">
+<h2>Redirects<a class="headerlink" href="usage.html#redirects" title="Permalink to this headline">¶</a></h2>
+<p>You can redirect to another page by returning a redirect response, which you
+can create by calling the <tt class="docutils literal"><code>redirect</code></tt> method:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>This will redirect from <tt class="docutils literal"><code>/</code></tt> to <tt class="docutils literal"><code>/hello</code></tt>.</p>
+</div>
+<div class="section" id="forwards">
+<h2>Forwards<a class="headerlink" href="usage.html#forwards" title="Permalink to this headline">¶</a></h2>
+<p>When you want to delegate the rendering to another controller, without a
+round-trip to the browser (as for a redirect), use an internal sub-request:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpKernel\HttpKernelInterface</span><span class="p">;</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// redirect to /hello</span>
+    <span class="nv">$subRequest</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">(</span><span class="nv">$subRequest</span><span class="p">,</span> <span class="nx">HttpKernelInterface</span><span class="o">::</span><span class="na">SUB_REQUEST</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
+<p>If you are using <tt class="docutils literal"><code>UrlGeneratorProvider</code></tt>, you can also generate the URI:</p>
+<div class="literal-block"><div class="last highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$request</span> <span class="o">=</span> <span class="nx">Request</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;url_generator&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">),</span> <span class="s1">&#39;GET&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div></div>
+<p>There's some more things that you need to keep in mind though. In most cases you
+will want to forward some parts of the current master request to the sub-request.
+That includes: Cookies, server information, session.
+Read more on <a class="reference internal" href="cookbook/sub_requests.html"><em>how to make sub-requests</em></a>.</p>
+</div>
+<div class="section" id="json">
+<h2>JSON<a class="headerlink" href="usage.html#json" title="Permalink to this headline">¶</a></h2>
+<p>If you want to return JSON data, you can use the <tt class="docutils literal"><code>json</code></tt> helper method.
+Simply pass it your data, status code and headers, and it will create a JSON
+response for you:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/users/{id}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$user</span> <span class="o">=</span> <span class="nx">getUser</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$error</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;The user was not found.&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nv">$error</span><span class="p">,</span> <span class="mi">404</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nv">$user</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="streaming">
+<h2>Streaming<a class="headerlink" href="usage.html#streaming" title="Permalink to this headline">¶</a></h2>
+<p>It's possible to create a streaming response, which is important in cases when
+you cannot buffer the data being sent:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/images/{file}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$file</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">file_exists</span><span class="p">(</span><span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/images/&#39;</span><span class="o">.</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">&#39;The image was not found.&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nv">$stream</span> <span class="o">=</span> <span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$file</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">readfile</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">stream</span><span class="p">(</span><span class="nv">$stream</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;image/png&#39;</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>If you need to send chunks, make sure you call <tt class="docutils literal"><code>ob_flush</code></tt> and <tt class="docutils literal"><code>flush</code></tt>
+after every chunk:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$stream</span> <span class="o">=</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$fh</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s1">&#39;http://www.example.com/&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="nb">feof</span><span class="p">(</span><span class="nv">$fh</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">echo</span> <span class="nb">fread</span><span class="p">(</span><span class="nv">$fh</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span>
+      <span class="nb">ob_flush</span><span class="p">();</span>
+      <span class="nb">flush</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nb">fclose</span><span class="p">(</span><span class="nv">$fh</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="traits">
+<h2>Traits<a class="headerlink" href="usage.html#traits" title="Permalink to this headline">¶</a></h2>
+<p>Silex comes with PHP traits that define shortcut methods.</p>
+<div class="admonition-wrapper">
+<div class="caution"></div><div class="admonition admonition-caution"><p class="first admonition-title">Caution</p>
+<p class="last">You need to use PHP 5.4 or later to benefit from this feature.</p>
+</div></div>
+<p>Almost all built-in service providers have some corresponding PHP traits. To
+use them, define your own Application class and include the traits you want:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Silex\Application</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyApplication</span> <span class="k">extends</span> <span class="nx">Application</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">Application\TwigTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">Application\SecurityTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">Application\FormTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">Application\UrlGeneratorTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">Application\SwiftmailerTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">Application\MonologTrait</span><span class="p">;</span>
+    <span class="k">use</span> <span class="nx">Application\TranslationTrait</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>You can also define your own Route class and use some traits:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Silex\Route</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyRoute</span> <span class="k">extends</span> <span class="nx">Route</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">Route\SecurityTrait</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>To use your newly defined route, override the <tt class="docutils literal"><code>$app['route_class']</code></tt>
+setting:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;route_class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MyRoute&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Read each provider chapter to learn more about the added methods.</p>
+</div>
+<div class="section" id="security">
+<h2>Security<a class="headerlink" href="usage.html#security" title="Permalink to this headline">¶</a></h2>
+<p>Make sure to protect your application against attacks.</p>
+<div class="section" id="escaping">
+<h3>Escaping<a class="headerlink" href="usage.html#escaping" title="Permalink to this headline">¶</a></h3>
+<p>When outputting any user input (either route variables GET/POST variables
+obtained from the request), you will have to make sure to escape it correctly,
+to prevent Cross-Site-Scripting attacks.</p>
+<ul>
+<li><p class="first"><strong>Escaping HTML</strong>: PHP provides the <tt class="docutils literal"><code>htmlspecialchars</code></tt> function for this.
+Silex provides a shortcut <tt class="docutils literal"><code>escape</code></tt> method:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/name&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Silex\Application</span> <span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;request&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="s2">&quot;You provided the name </span><span class="si">{</span><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>If you use the Twig template engine you should use its escaping or even
+auto-escaping mechanisms.</p>
+</li>
+<li><p class="first"><strong>Escaping JSON</strong>: If you want to provide data in JSON format you should
+use the Silex <tt class="docutils literal"><code>json</code></tt> function:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/name.json&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Silex\Application</span> <span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;request&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="Introduction" href="intro.html">
+                    &laquo;&nbsp;Introduction
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="Middlewares" href="middlewares.html">
+                    Middlewares&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

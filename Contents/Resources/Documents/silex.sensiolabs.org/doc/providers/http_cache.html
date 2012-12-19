@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>HttpCacheServiceProvider - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../../documentation">DOCUMENTATION</a></li>
+              <li><a href="../../download">DOWNLOAD</a></li>
+              <li><a href="../../development">DEVELOPMENT</a></li>
+              <li><a href="../../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="http_cache.html#">HttpCacheServiceProvider</a><ul>
+<li><a class="reference internal" href="http_cache.html#parameters">Parameters</a></li>
+<li><a class="reference internal" href="http_cache.html#services">Services</a></li>
+<li><a class="reference internal" href="http_cache.html#registering">Registering</a></li>
+<li><a class="reference internal" href="http_cache.html#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/providers/http_cache.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="httpcacheserviceprovider">
+<h1>HttpCacheServiceProvider<a class="headerlink" href="http_cache.html#httpcacheserviceprovider" title="Permalink to this headline">¶</a></h1>
+<p>The <em>HttpCacheProvider</em> provides support for the Symfony2 Reverse Proxy.</p>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="http_cache.html#parameters" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>http_cache.cache_dir</strong>: The cache directory to store the HTTP cache data.</li>
+<li><strong>http_cache.options</strong> (optional): An array of options for the <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpKernel/HttpCache/HttpCache.html">HttpCache</a>
+constructor.</li>
+</ul>
+</div>
+<div class="section" id="services">
+<h2>Services<a class="headerlink" href="http_cache.html#services" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>http_cache</strong>: An instance of <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpKernel/HttpCache/HttpCache.html">HttpCache</a>.</li>
+</ul>
+</div>
+<div class="section" id="registering">
+<h2>Registering<a class="headerlink" href="http_cache.html#registering" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="k">new</span> <span class="nx">Silex\Provider\HttpCacheServiceProvider</span><span class="p">(),</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;http_cache.cache_dir&#39;</span> <span class="o">=&gt;</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/cache/&#39;</span><span class="p">,</span>
+<span class="p">));</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="http_cache.html#usage" title="Permalink to this headline">¶</a></h2>
+<p>Silex already supports any reverse proxy like Varnish out of the box by
+setting Response HTTP cache headers:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">&#39;Foo&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;Cache-Control&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;s-maxage=5&#39;</span><span class="p">,</span>
+    <span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
+<p>If you want Silex to trust the <tt class="docutils literal"><code>X-Forwarded-For*</code></tt> headers from your
+reverse proxy, you will need to run your application like this:</p>
+<div class="literal-block"><div class="last highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
+
+<span class="nx">Request</span><span class="o">::</span><span class="na">trustProxyData</span><span class="p">();</span>
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div></div>
+</div></div>
+<p>This provider allows you to use the Symfony2 reverse proxy natively with
+Silex applications by using the <tt class="docutils literal"><code>http_cache</code></tt> service:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;http_cache&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>The provider also provides ESI support:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s">&lt;&lt;&lt;EOF</span>
+<span class="s">&lt;html&gt;</span>
+<span class="s">    &lt;body&gt;</span>
+<span class="s">        Hello</span>
+<span class="s">        &lt;esi:include src=&quot;/included&quot; /&gt;</span>
+<span class="s">    &lt;/body&gt;</span>
+<span class="s">&lt;/html&gt;</span>
+
+<span class="s">EOF</span>
+    <span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;Surrogate-Control&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;content=&quot;ESI/1.0&quot;&#39;</span><span class="p">,</span>
+    <span class="p">));</span>
+
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/included&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="s1">&#39;Foo&#39;</span><span class="p">);</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;http_cache&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
+<p>To help you debug caching issues, set your application <tt class="docutils literal"><code>debug</code></tt> to true.
+Symfony automatically adds a <tt class="docutils literal"><code>X-Symfony-Cache</code></tt> header to each response
+with useful information about cache hits and misses.</p>
+<p>If you are <em>not</em> using the Symfony Session provider, you might want to set
+the PHP <tt class="docutils literal"><code>session.cache_limiter</code></tt> setting to an empty value to avoid the
+default PHP behavior.</p>
+<p class="last">Finally, check that your Web server does not override your caching strategy.</p>
+</div></div>
+<p>For more information, consult the <a class="reference external" href="http://symfony.com/doc/current/book/http_cache.html">Symfony2 HTTP Cache documentation</a>.</p>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="FormServiceProvider" href="form.html">
+                    &laquo;&nbsp;FormServiceProvider
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="SecurityServiceProvider" href="security.html">
+                    SecurityServiceProvider&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

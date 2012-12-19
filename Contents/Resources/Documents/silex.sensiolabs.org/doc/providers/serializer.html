@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>SerializerServiceProvider - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../../documentation">DOCUMENTATION</a></li>
+              <li><a href="../../download">DOWNLOAD</a></li>
+              <li><a href="../../development">DEVELOPMENT</a></li>
+              <li><a href="../../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="serializer.html#">SerializerServiceProvider</a><ul>
+<li><a class="reference internal" href="serializer.html#parameters">Parameters</a></li>
+<li><a class="reference internal" href="serializer.html#services">Services</a></li>
+<li><a class="reference internal" href="serializer.html#registering">Registering</a></li>
+<li><a class="reference internal" href="serializer.html#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/providers/serializer.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="serializerserviceprovider">
+<h1>SerializerServiceProvider<a class="headerlink" href="serializer.html#serializerserviceprovider" title="Permalink to this headline">¶</a></h1>
+<p>The <em>SerializerServiceProvider</em> provides a service for serializing objects.</p>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="serializer.html#parameters" title="Permalink to this headline">¶</a></h2>
+<p>None.</p>
+</div>
+<div class="section" id="services">
+<h2>Services<a class="headerlink" href="serializer.html#services" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>serializer</strong>: An instance of <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Serializer/Serializer.html">SymfonyComponentSerializerSerializer</a>.</li>
+<li><strong>serializer.encoders</strong>: <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Serializer/Encoder/JsonEncoder.html">SymfonyComponentSerializerEncoderJsonEncoder</a>
+and <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Serializer/Encoder/XmlEncoder">SymfonyComponentSerializerEncoderXmlEncoder</a>.</li>
+<li><strong>serializer.normalizers</strong>: <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Serializer/Normalizer/CustomNormalizer">SymfonyComponentSerializerNormalizerCustomNormalizer</a>
+and <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Serializer/Normalizer/GetSetMethodNormalizer">SymfonyComponentSerializerNormalizerGetSetMethodNormalizer</a>.</li>
+</ul>
+</div>
+<div class="section" id="registering">
+<h2>Registering<a class="headerlink" href="serializer.html#registering" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="k">new</span> <span class="nx">Silex\Provider\SerializerServiceProvider</span><span class="p">());</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="serializer.html#usage" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><code>SerializerServiceProvider</code></tt> provider provides a <tt class="docutils literal"><code>serializer</code></tt> service:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Silex\Application</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Silex\Provider\SerializerServiceProvider</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Response</span><span class="p">;</span>
+
+<span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">();</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="k">new</span> <span class="nx">SerializerServiceProvider</span><span class="p">());</span>
+
+<span class="c1">// only accept content types supported by the serializer via the assert method.</span>
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">&quot;/pages/{id}.{_format}&quot;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// assume a page_repository service exists that returns Page objects. The</span>
+    <span class="c1">// object returned has getters and setters exposing the state.</span>
+    <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;page_repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+    <span class="nv">$format</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;request&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getRequestFormat</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$page</span> <span class="nx">instanceof</span> <span class="nx">Page</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">abort</span><span class="p">(</span><span class="s2">&quot;No page found for id: </span><span class="si">$id</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">(</span><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;serializer&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span><span class="nv">$page</span><span class="p">,</span> <span class="nv">$format</span><span class="p">),</span> <span class="mi">200</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s2">&quot;Content-Type&quot;</span> <span class="o">=&gt;</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;request&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getMimeType</span><span class="p">(</span><span class="nv">$format</span><span class="p">)</span>
+    <span class="p">));</span>
+<span class="p">})</span><span class="o">-&gt;</span><span class="na">assert</span><span class="p">(</span><span class="s2">&quot;_format&quot;</span><span class="p">,</span> <span class="s2">&quot;xml|json&quot;</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="na">assert</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;\d+&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+</div>
+
+    </div>
+
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

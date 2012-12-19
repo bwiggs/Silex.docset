@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>Middlewares - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../documentation">DOCUMENTATION</a></li>
+              <li><a href="../download">DOWNLOAD</a></li>
+              <li><a href="../development">DEVELOPMENT</a></li>
+              <li><a href="../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="middlewares.html#">Middlewares</a><ul>
+<li><a class="reference internal" href="middlewares.html#application-middlewares">Application Middlewares</a><ul>
+<li><a class="reference internal" href="middlewares.html#before-middleware">Before Middleware</a></li>
+<li><a class="reference internal" href="middlewares.html#after-middleware">After Middleware</a></li>
+<li><a class="reference internal" href="middlewares.html#finish-middleware">Finish Middleware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="middlewares.html#route-middlewares">Route Middlewares</a><ul>
+<li><a class="reference internal" href="middlewares.html#id1">Before Middleware</a></li>
+<li><a class="reference internal" href="middlewares.html#id2">After Middleware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="middlewares.html#middlewares-priority">Middlewares Priority</a></li>
+<li><a class="reference internal" href="middlewares.html#short-circuiting-the-controller">Short-circuiting the Controller</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/middlewares.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="middlewares">
+<h1>Middlewares<a class="headerlink" href="middlewares.html#middlewares" title="Permalink to this headline">¶</a></h1>
+<p>Silex allows you to run code, that changes the default Silex behavior, at
+different stages during the handling of a request through <em>middlewares</em>:</p>
+<ul class="simple">
+<li><em>Application middlewares</em> are triggered independently of the current handled
+request;</li>
+<li><em>Route middlewares</em> are triggered when their associated route is matched.</li>
+</ul>
+<div class="section" id="application-middlewares">
+<h2>Application Middlewares<a class="headerlink" href="middlewares.html#application-middlewares" title="Permalink to this headline">¶</a></h2>
+<p>The application middlewares are only run for the &quot;master&quot; Request.</p>
+<div class="section" id="before-middleware">
+<h3>Before Middleware<a class="headerlink" href="middlewares.html#before-middleware" title="Permalink to this headline">¶</a></h3>
+<p>A <em>before</em> application middleware allows you to tweak the Request before the
+controller is executed:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>By default, the middleware is run after the routing and the security.</p>
+<p>If you want your middleware to be run even if an exception is thrown early on
+(on a 404 or 403 error for instance), then, you need to register it as an
+early event:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">},</span> <span class="nx">Application</span><span class="o">::</span><span class="na">EARLY_EVENT</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Of course, in this case, the routing and the security won't have been
+executed, and so you won't have access to the locale, the current route, or
+the security user.</p>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">The before middleware is an event registered on the Symfony <em>request</em>
+event.</p>
+</div></div>
+</div>
+<div class="section" id="after-middleware">
+<h3>After Middleware<a class="headerlink" href="middlewares.html#after-middleware" title="Permalink to this headline">¶</a></h3>
+<p>An <em>after</em> application middleware allows you to tweak the Response before it
+is sent to the client:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">after</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Response</span> <span class="nv">$response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">The after middleware is an event registered on the Symfony <em>response</em>
+event.</p>
+</div></div>
+</div>
+<div class="section" id="finish-middleware">
+<h3>Finish Middleware<a class="headerlink" href="middlewares.html#finish-middleware" title="Permalink to this headline">¶</a></h3>
+<p>A <em>finish</em> application middleware allows you to execute tasks after the
+Response has been sent to the client (like sending emails or logging):</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">finish</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Response</span> <span class="nv">$response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="c1">// Warning: modifications to the Request or Response will be ignored</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">The finish middleware is an event registered on the Symfony <em>terminate</em>
+event.</p>
+</div></div>
+</div>
+</div>
+<div class="section" id="route-middlewares">
+<h2>Route Middlewares<a class="headerlink" href="middlewares.html#route-middlewares" title="Permalink to this headline">¶</a></h2>
+<p>Route middlewares are added to routes or route collections and they are only
+triggered when the corresponding route is matched. You can also stack them:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/somewhere&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="nv">$before1</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="nv">$before2</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">after</span><span class="p">(</span><span class="nv">$after1</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">after</span><span class="p">(</span><span class="nv">$after2</span><span class="p">)</span>
+<span class="p">;</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="section" id="id1">
+<h3>Before Middleware<a class="headerlink" href="middlewares.html#id1" title="Permalink to this headline">¶</a></h3>
+<p>A <em>before</em> route middleware is fired just before the route callback, but after
+the <em>before</em> application middlewares:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$before</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/somewhere&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="nv">$before</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="id2">
+<h3>After Middleware<a class="headerlink" href="middlewares.html#id2" title="Permalink to this headline">¶</a></h3>
+<p>An <em>after</em> route middleware is fired just after the route callback, but before
+the application <em>after</em> application middlewares:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$after</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Response</span> <span class="nv">$response</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/somewhere&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">})</span>
+<span class="o">-&gt;</span><span class="na">after</span><span class="p">(</span><span class="nv">$after</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+</div>
+<div class="section" id="middlewares-priority">
+<h2>Middlewares Priority<a class="headerlink" href="middlewares.html#middlewares-priority" title="Permalink to this headline">¶</a></h2>
+<p>You can add as many middlewares as you want, in which case they are triggered
+in the same order as you added them.</p>
+<p>You can explicitly control the priority of your middleware by passing an
+additional argument to the registration methods:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">},</span> <span class="mi">32</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>As a convenience, two constants allow you to register an event as early as
+possible or as late as possible:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">},</span> <span class="nx">Application</span><span class="o">::</span><span class="na">EARLY_EVENT</span><span class="p">);</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">},</span> <span class="nx">Application</span><span class="o">::</span><span class="na">LATE_EVENT</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="short-circuiting-the-controller">
+<h2>Short-circuiting the Controller<a class="headerlink" href="middlewares.html#short-circuiting-the-controller" title="Permalink to this headline">¶</a></h2>
+<p>If a before middleware returns a Response object, the Request handling is
+short-circuited (the next middlewares won't be run, neither the route
+callback), and the Response is passed to the after middlewares right away:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// redirect the user to the login screen if access to the Resource is protected</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">RedirectResponse</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">If a before middleware does not return a Response or <tt class="docutils literal"><code>null</code></tt>, a
+<tt class="docutils literal"><code>RuntimeException</code></tt> is thrown.</p>
+</div></div>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="Usage" href="usage.html">
+                    &laquo;&nbsp;Usage
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="Modularity" href="modularity.html">
+                    Modularity&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

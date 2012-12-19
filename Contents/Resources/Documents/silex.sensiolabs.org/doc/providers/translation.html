@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>TranslationServiceProvider - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../../documentation">DOCUMENTATION</a></li>
+              <li><a href="../../download">DOWNLOAD</a></li>
+              <li><a href="../../development">DEVELOPMENT</a></li>
+              <li><a href="../../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="translation.html#">TranslationServiceProvider</a><ul>
+<li><a class="reference internal" href="translation.html#parameters">Parameters</a></li>
+<li><a class="reference internal" href="translation.html#services">Services</a></li>
+<li><a class="reference internal" href="translation.html#registering">Registering</a></li>
+<li><a class="reference internal" href="translation.html#usage">Usage</a></li>
+<li><a class="reference internal" href="translation.html#traits">Traits</a></li>
+<li><a class="reference internal" href="translation.html#recipes">Recipes</a><ul>
+<li><a class="reference internal" href="translation.html#yaml-based-language-files">YAML-based language files</a></li>
+<li><a class="reference internal" href="translation.html#xliff-based-language-files">XLIFF-based language files</a></li>
+<li><a class="reference internal" href="translation.html#accessing-translations-in-twig-templates">Accessing translations in Twig templates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/providers/translation.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="translationserviceprovider">
+<h1>TranslationServiceProvider<a class="headerlink" href="translation.html#translationserviceprovider" title="Permalink to this headline">¶</a></h1>
+<p>The <em>TranslationServiceProvider</em> provides a service for translating your
+application into different languages.</p>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="translation.html#parameters" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>translator.domains</strong> (optional): A mapping of domains/locales/messages.
+This parameter contains the translation data for all languages and domains.</li>
+<li><strong>locale</strong> (optional): The locale for the translator. You will most likely
+want to set this based on some request parameter. Defaults to <tt class="docutils literal"><code>en</code></tt>.</li>
+<li><strong>locale_fallback</strong> (optional): Fallback locale for the translator. It will
+be used when the current locale has no messages set. Defaults to <tt class="docutils literal"><code>en</code></tt>.</li>
+</ul>
+</div>
+<div class="section" id="services">
+<h2>Services<a class="headerlink" href="translation.html#services" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>translator</strong>: An instance of <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Translation/Translator.html">Translator</a>,
+that is used for translation.</li>
+<li><strong>translator.loader</strong>: An instance of an implementation of the translation
+<a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Translation/Loader/LoaderInterface.html">LoaderInterface</a>,
+defaults to an <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Translation/Loader/ArrayLoader.html">ArrayLoader</a>.</li>
+<li><strong>translator.message_selector</strong>: An instance of <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Translation/MessageSelector.html">MessageSelector</a>.</li>
+</ul>
+</div>
+<div class="section" id="registering">
+<h2>Registering<a class="headerlink" href="translation.html#registering" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="k">new</span> <span class="nx">Silex\Provider\TranslationServiceProvider</span><span class="p">(),</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;locale_fallback&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;en&#39;</span><span class="p">,</span>
+<span class="p">));</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p>The Symfony Translation Component comes with the &quot;fat&quot; Silex archive but
+not with the regular one. If you are using Composer, add it as a
+dependency to your <tt class="docutils literal"><code>composer.json</code></tt> file:</p>
+<div class="literal-block"><div class="last highlight-json"><pre>"require": {
+    "symfony/translation": "2.1.*"
+}</pre>
+</div></div>
+</div></div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="translation.html#usage" title="Permalink to this headline">¶</a></h2>
+<p>The Translation provider provides a <tt class="docutils literal"><code>translator</code></tt> service and makes use of
+the <tt class="docutils literal"><code>translator.domains</code></tt> parameter:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;translator.domains&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;en&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;hello&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Hello %name%&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;goodbye&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;Goodbye %name%&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;de&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;hello&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Hallo %name%&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;goodbye&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;Tschüss %name%&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;fr&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;hello&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Bonjour %name%&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;goodbye&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;Au revoir %name%&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;validators&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;fr&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;This value should be a valid number.&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Cette valeur doit être un nombre.&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">),</span>
+<span class="p">);</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/{_locale}/{message}/{name}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;translator&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">trans</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;%name%&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>The above example will result in following routes:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><code>/en/hello/igor</code></tt> will return <tt class="docutils literal"><code>Hello igor</code></tt>.</li>
+<li><tt class="docutils literal"><code>/de/hello/igor</code></tt> will return <tt class="docutils literal"><code>Hallo igor</code></tt>.</li>
+<li><tt class="docutils literal"><code>/fr/hello/igor</code></tt> will return <tt class="docutils literal"><code>Bonjour igor</code></tt>.</li>
+<li><tt class="docutils literal"><code>/it/hello/igor</code></tt> will return <tt class="docutils literal"><code>Hello igor</code></tt> (because of the fallback).</li>
+</ul>
+</div>
+<div class="section" id="traits">
+<h2>Traits<a class="headerlink" href="translation.html#traits" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><code>Silex\Application\TranslationTrait</code></tt> adds the following shortcuts:</p>
+<ul class="simple">
+<li><strong>trans</strong>: Translates the given message.</li>
+<li><strong>transChoice</strong>: Translates the given choice message by choosing a
+translation according to a number.</li>
+</ul>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">trans</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">transChoice</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="recipes">
+<h2>Recipes<a class="headerlink" href="translation.html#recipes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="yaml-based-language-files">
+<h3>YAML-based language files<a class="headerlink" href="translation.html#yaml-based-language-files" title="Permalink to this headline">¶</a></h3>
+<p>Having your translations in PHP files can be inconvenient. This recipe will
+show you how to load translations from external YAML files.</p>
+<p>First, add the Symfony2 <tt class="docutils literal"><code>Config</code></tt> and <tt class="docutils literal"><code>Yaml</code></tt> components in your composer
+file:</p>
+<div class="literal-block"><div class="highlight-json"><pre>"require": {
+    "symfony/config": "2.1.*",
+    "symfony/yaml": "2.1.*"
+}</pre>
+</div></div>
+<p>Next, you have to create the language mappings in YAML files. A naming you can
+use is <tt class="docutils literal"><code>locales/en.yml</code></tt>. Just do the mapping in this file as follows:</p>
+<div class="literal-block"><div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Hello %name%</span>
+<span class="l-Scalar-Plain">goodbye</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Goodbye %name%</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Then, register the <tt class="docutils literal"><code>YamlFileLoader</code></tt> on the <tt class="docutils literal"><code>translator</code></tt> and add all your
+translation files:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\Translation\Loader\YamlFileLoader</span><span class="p">;</span>
+
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;translator&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">share</span><span class="p">(</span><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">extend</span><span class="p">(</span><span class="s1">&#39;translator&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$translator</span><span class="p">,</span> <span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$translator</span><span class="o">-&gt;</span><span class="na">addLoader</span><span class="p">(</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">YamlFileLoader</span><span class="p">());</span>
+
+    <span class="nv">$translator</span><span class="o">-&gt;</span><span class="na">addResource</span><span class="p">(</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/locales/en.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;en&#39;</span><span class="p">);</span>
+    <span class="nv">$translator</span><span class="o">-&gt;</span><span class="na">addResource</span><span class="p">(</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/locales/de.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">);</span>
+    <span class="nv">$translator</span><span class="o">-&gt;</span><span class="na">addResource</span><span class="p">(</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/locales/fr.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nv">$translator</span><span class="p">;</span>
+<span class="p">}));</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="xliff-based-language-files">
+<h3>XLIFF-based language files<a class="headerlink" href="translation.html#xliff-based-language-files" title="Permalink to this headline">¶</a></h3>
+<p>Just as you would do with YAML translation files, you first need to add the
+Symfony2 <tt class="docutils literal"><code>Config</code></tt> component as a dependency (see above for details).</p>
+<p>Then, similarly, create XLIFF files in your locales directory and add them to
+the translator:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$translator</span><span class="o">-&gt;</span><span class="na">addResource</span><span class="p">(</span><span class="s1">&#39;xliff&#39;</span><span class="p">,</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/locales/en.xlf&#39;</span><span class="p">,</span> <span class="s1">&#39;en&#39;</span><span class="p">);</span>
+<span class="nv">$translator</span><span class="o">-&gt;</span><span class="na">addResource</span><span class="p">(</span><span class="s1">&#39;xliff&#39;</span><span class="p">,</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/locales/de.xlf&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">);</span>
+<span class="nv">$translator</span><span class="o">-&gt;</span><span class="na">addResource</span><span class="p">(</span><span class="s1">&#39;xliff&#39;</span><span class="p">,</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">&#39;/locales/fr.xlf&#39;</span><span class="p">,</span> <span class="s1">&#39;fr&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">The XLIFF loader is already pre-configured by the extension.</p>
+</div></div>
+</div>
+<div class="section" id="accessing-translations-in-twig-templates">
+<h3>Accessing translations in Twig templates<a class="headerlink" href="translation.html#accessing-translations-in-twig-templates" title="Permalink to this headline">¶</a></h3>
+<p>Once loaded, the translation service provider is available from within Twig
+templates:</p>
+<div class="literal-block"><div class="highlight-jinja"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">{{</span> <span class="nv">app.translator.trans</span><span class="o">(</span><span class="s1">&#39;translation_key&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="x"></span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Moreover, when using the Twig bridge provided by Symfony (see
+<a class="reference internal" href="twig.html"><em>TwigServiceProvider</em></a>), you will be allowed to translate
+strings in the Twig way:</p>
+<div class="literal-block"><div class="highlight-jinja"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">{{</span> <span class="s1">&#39;translation_key&#39;</span><span class="o">|</span><span class="nf">trans</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{{</span> <span class="s1">&#39;translation_key&#39;</span><span class="o">|</span><span class="nf">transchoice</span> <span class="cp">}}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">trans</span> <span class="cp">%}</span><span class="x">translation_key</span><span class="cp">{%</span> <span class="k">endtrans</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="SwiftmailerServiceProvider" href="swiftmailer.html">
+                    &laquo;&nbsp;SwiftmailerServiceProvider
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="TwigServiceProvider" href="twig.html">
+                    TwigServiceProvider&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

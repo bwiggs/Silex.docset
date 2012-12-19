@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>Internals - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../documentation">DOCUMENTATION</a></li>
+              <li><a href="../download">DOWNLOAD</a></li>
+              <li><a href="../development">DEVELOPMENT</a></li>
+              <li><a href="../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="internals.html#">Internals</a><ul>
+<li><a class="reference internal" href="internals.html#silex">Silex</a><ul>
+<li><a class="reference internal" href="internals.html#application">Application</a></li>
+<li><a class="reference internal" href="internals.html#controller">Controller</a></li>
+<li><a class="reference internal" href="internals.html#controllercollection">ControllerCollection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="internals.html#symfony2">Symfony2</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/internals.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="internals">
+<h1>Internals<a class="headerlink" href="internals.html#internals" title="Permalink to this headline">¶</a></h1>
+<p>This chapter will tell you a bit about how Silex works
+internally.</p>
+<div class="section" id="silex">
+<h2>Silex<a class="headerlink" href="internals.html#silex" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="application">
+<h3>Application<a class="headerlink" href="internals.html#application" title="Permalink to this headline">¶</a></h3>
+<p>The application is the main interface to Silex. It implements Symfony2's
+<a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpKernel/HttpKernelInterface.html">HttpKernelInterface</a>,
+so you can pass a <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpFoundation/Request.html">Request</a>
+to the <tt class="docutils literal"><code>handle</code></tt> method and it will return a <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpFoundation/Response.html">Response</a>.</p>
+<p>It extends the <tt class="docutils literal"><code>Pimple</code></tt> service container, allowing for flexibility on the
+outside as well as the inside. You could replace any service, and you are also
+able to read them.</p>
+<p>The application makes strong use of the <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/EventDispatcher/EventDispatcher.html">EventDispatcher</a>
+to hook into the Symfony2 <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpKernel/HttpKernel.html">HttpKernel</a>
+events. This allows fetching the <tt class="docutils literal"><code>Request</code></tt>, converting string responses into
+<tt class="docutils literal"><code>Response</code></tt> objects and handling Exceptions. We also use it to dispatch some
+custom events like before/after middlewares and errors.</p>
+</div>
+<div class="section" id="controller">
+<h3>Controller<a class="headerlink" href="internals.html#controller" title="Permalink to this headline">¶</a></h3>
+<p>The Symfony2 <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Routing/Route.html">Route</a> is
+actually quite powerful. Routes can be named, which allows for URL generation.
+They can also have requirements for the variable parts. In order to allow
+settings these through a nice interface the <tt class="docutils literal"><code>match</code></tt> method (which is used by
+<tt class="docutils literal"><code>get</code></tt>, <tt class="docutils literal"><code>post</code></tt>, etc.) returns an instance of the <tt class="docutils literal"><code>Controller</code></tt>, which
+wraps a route.</p>
+</div>
+<div class="section" id="controllercollection">
+<h3>ControllerCollection<a class="headerlink" href="internals.html#controllercollection" title="Permalink to this headline">¶</a></h3>
+<p>One of the goals of exposing the <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Routing/RouteCollection.html">RouteCollection</a>
+was to make it mutable, so providers could add stuff to it. The challenge here
+is the fact that routes know nothing about their name. The name only has
+meaning in context of the <tt class="docutils literal"><code>RouteCollection</code></tt> and cannot be changed.</p>
+<p>To solve this challenge we came up with a staging area for routes. The
+<tt class="docutils literal"><code>ControllerCollection</code></tt> holds the controllers until <tt class="docutils literal"><code>flush</code></tt> is called, at
+which point the routes are added to the <tt class="docutils literal"><code>RouteCollection</code></tt>. Also, the
+controllers are then frozen. This means that they can no longer be modified
+and will throw an Exception if you try to do so.</p>
+<p>Unfortunately no good way for flushing implicitly could be found, which is why
+flushing is now always explicit. The Application will flush, but if you want
+to read the <tt class="docutils literal"><code>ControllerCollection</code></tt> before the request takes place, you will
+have to call flush yourself.</p>
+<p>The <tt class="docutils literal"><code>Application</code></tt> provides a shortcut <tt class="docutils literal"><code>flush</code></tt> method for flushing the
+<tt class="docutils literal"><code>ControllerCollection</code></tt>.</p>
+<div class="admonition-wrapper">
+<div class="tip"></div><div class="admonition admonition-tip"><p class="first admonition-title">Tip</p>
+<p class="last">Instead of creating an instance of <tt class="docutils literal"><code>RouteCollection</code></tt> yourself, use the
+<tt class="docutils literal"><code>$app['controllers_factory']</code></tt> factory instead.</p>
+</div></div>
+</div>
+</div>
+<div class="section" id="symfony2">
+<h2>Symfony2<a class="headerlink" href="internals.html#symfony2" title="Permalink to this headline">¶</a></h2>
+<p>Following Symfony2 components are used by Silex:</p>
+<ul class="simple">
+<li><strong>HttpFoundation</strong>: For <tt class="docutils literal"><code>Request</code></tt> and <tt class="docutils literal"><code>Response</code></tt>.</li>
+<li><strong>HttpKernel</strong>: Because we need a heart.</li>
+<li><strong>Routing</strong>: For matching defined routes.</li>
+<li><strong>EventDispatcher</strong>: For hooking into the HttpKernel.</li>
+</ul>
+<p>For more information, <a class="reference external" href="http://symfony.com/">check out the Symfony website</a>.</p>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="How to make sub-requests" href="cookbook/sub_requests.html">
+                    &laquo;&nbsp;How to make sub-requests
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="Contributing" href="contributing.html">
+                    Contributing&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

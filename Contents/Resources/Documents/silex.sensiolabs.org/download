@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>Download - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="css/code.css" rel="stylesheet" type="text/css" />
+    <link href="css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a href="documentation">DOCUMENTATION</a></li>
+              <li><a class="active" href="download">DOWNLOAD</a></li>
+              <li><a href="development">DEVELOPMENT</a></li>
+              <li><a href="contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <h2>Download and Installation</h2>
+
+    <h3>Via an Archive</h3>
+
+    <p>
+
+        The easiest way to get started with Silex is to get an archive with
+        everything included (it contains many optional dependencies):
+    </p>
+
+    <p class="download">
+
+        Download Silex as a "fat" <a href="http://silex.sensiolabs.org/get/silex_fat.zip">.zip</a> or <a href="http://silex.sensiolabs.org/get/silex_fat.tgz">.tgz</a> file.
+
+    </p>
+
+    <p>
+
+        You can also download a minimal setup with just the required
+        dependencies:
+
+    </p>
+
+    <p class="download">
+
+        Download Silex as a "slim" <a href="http://silex.sensiolabs.org/get/silex.zip">.zip</a> or <a href="http://silex.sensiolabs.org/get/silex.tgz">.tgz</a> file.
+
+    </p>
+
+    <p>
+
+        These archives have been created using <a
+        href="http://getcomposer.org/">Composer</a> to make them easily
+        upgradable and to allow you to add or remove dependencies easily (see
+        below).
+
+    </p>
+
+    <h3>Via Composer</h3>
+
+    <p>
+
+        <a href="http://getcomposer.org/">Composer</a> is the most flexible
+        way to get started with Silex. Create a directory to host your Silex
+        application and create a <code>composer.json</code> file inside:
+
+    </p>
+
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;silex/silex&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.*&quot;</span>
+    <span class="p">}</span><span class="nt">,</span>
+    <span class="nt">&quot;minimum-stability&quot;</span><span class="p">:</span> <span class="nt">&quot;dev&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</pre>
+
+<p>And run Composer to install Silex and all its dependencies:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -s http://getcomposer.org/installer | php
+<span class="nv">$ </span>composer.phar install
+</pre></div>
+</div>
+</div>
+
+    <p>Then, create a bootstrap file as explained in the <a href="doc/usage.html#bootstrap">documentation</a>.</p>
+
+    <h3>Via a PHAR - <small>deprecated</small></h3>
+
+    <p>
+
+        You can also download Silex as a <a href="http://silex.sensiolabs.org/get/silex.phar">PHAR file</a>. This method is deprecated as there
+        are a lot of <a href="doc/phar.html">caveats</a>
+        and it also does not let you easily add other dependencies.
+
+    </p>
+      </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>ValidatorServiceProvider - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../../documentation">DOCUMENTATION</a></li>
+              <li><a href="../../download">DOWNLOAD</a></li>
+              <li><a href="../../development">DEVELOPMENT</a></li>
+              <li><a href="../../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="validator.html#">ValidatorServiceProvider</a><ul>
+<li><a class="reference internal" href="validator.html#parameters">Parameters</a></li>
+<li><a class="reference internal" href="validator.html#services">Services</a></li>
+<li><a class="reference internal" href="validator.html#registering">Registering</a></li>
+<li><a class="reference internal" href="validator.html#usage">Usage</a><ul>
+<li><a class="reference internal" href="validator.html#validating-values">Validating Values</a></li>
+<li><a class="reference internal" href="validator.html#validating-associative-arrays">Validating Associative Arrays</a></li>
+<li><a class="reference internal" href="validator.html#validating-objects">Validating Objects</a></li>
+<li><a class="reference internal" href="validator.html#translation">Translation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/providers/validator.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="validatorserviceprovider">
+<h1>ValidatorServiceProvider<a class="headerlink" href="validator.html#validatorserviceprovider" title="Permalink to this headline">¶</a></h1>
+<p>The <em>ValidatorServiceProvider</em> provides a service for validating data. It is
+most useful when used with the <em>FormServiceProvider</em>, but can also be used
+standalone.</p>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="validator.html#parameters" title="Permalink to this headline">¶</a></h2>
+<p>none</p>
+</div>
+<div class="section" id="services">
+<h2>Services<a class="headerlink" href="validator.html#services" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>validator</strong>: An instance of <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Validator/Validator.html">Validator</a>.</p>
+</li>
+<li><p class="first"><strong>validator.mapping.class_metadata_factory</strong>: Factory for metadata loaders,
+which can read validation constraint information from classes. Defaults to
+StaticMethodLoader--ClassMetadataFactory.</p>
+<p>This means you can define a static <tt class="docutils literal"><code>loadValidatorMetadata</code></tt> method on your
+data class, which takes a ClassMetadata argument. Then you can set
+constraints on this ClassMetadata instance.</p>
+</li>
+<li><p class="first"><strong>validator.validator_factory</strong>: Factory for ConstraintValidators. Defaults
+to a standard <tt class="docutils literal"><code>ConstraintValidatorFactory</code></tt>. Mostly used internally by the
+Validator.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="registering">
+<h2>Registering<a class="headerlink" href="validator.html#registering" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="k">new</span> <span class="nx">Silex\Provider\ValidatorServiceProvider</span><span class="p">());</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p>The Symfony Validator Component comes with the &quot;fat&quot; Silex archive but not
+with the regular one. If you are using Composer, add it as a dependency to
+your <tt class="docutils literal"><code>composer.json</code></tt> file:</p>
+<div class="literal-block"><div class="last highlight-json"><pre>"require": {
+    "symfony/validator": "2.1.*"
+}</pre>
+</div></div>
+</div></div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="validator.html#usage" title="Permalink to this headline">¶</a></h2>
+<p>The Validator provider provides a <tt class="docutils literal"><code>validator</code></tt> service.</p>
+<div class="section" id="validating-values">
+<h3>Validating Values<a class="headerlink" href="validator.html#validating-values" title="Permalink to this headline">¶</a></h3>
+<p>You can validate values directly using the <tt class="docutils literal"><code>validateValue</code></tt> validator
+method:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\Validator\Constraints</span> <span class="k">as</span> <span class="nx">Assert</span><span class="p">;</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/validate/{email}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$email</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;validator&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">validateValue</span><span class="p">(</span><span class="nv">$email</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\Email</span><span class="p">());</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$errors</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;The email is valid&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="validating-associative-arrays">
+<h3>Validating Associative Arrays<a class="headerlink" href="validator.html#validating-associative-arrays" title="Permalink to this headline">¶</a></h3>
+<p>Validating associative arrays is like validating simple values, with a
+collection of constraints:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\Validator\Constraints</span> <span class="k">as</span> <span class="nx">Assert</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Book</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$title</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$author</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Author</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$first_name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$last_name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$book</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Book&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;last_name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;Potencier&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">);</span>
+
+<span class="nv">$constraint</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Assert\Collection</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+    <span class="s1">&#39;author&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Assert\Collection</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="k">new</span> <span class="nx">Assert\NotBlank</span><span class="p">(),</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">)),</span>
+        <span class="s1">&#39;last_name&#39;</span>  <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+    <span class="p">)),</span>
+<span class="p">));</span>
+<span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;validator&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">validateValue</span><span class="p">(</span><span class="nv">$book</span><span class="p">,</span> <span class="nv">$constraint</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$error</span><span class="o">-&gt;</span><span class="na">getPropertyPath</span><span class="p">()</span><span class="o">.</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s1">&#39;The book is valid&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="validating-objects">
+<h3>Validating Objects<a class="headerlink" href="validator.html#validating-objects" title="Permalink to this headline">¶</a></h3>
+<p>If you want to add validations to a class, you can define the constraint for
+the class properties and getters, and then call the <tt class="docutils literal"><code>validate</code></tt> method:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\Validator\Constraints</span> <span class="k">as</span> <span class="nx">Assert</span><span class="p">;</span>
+
+<span class="nv">$author</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Author</span><span class="p">();</span>
+<span class="nv">$author</span><span class="o">-&gt;</span><span class="na">first_name</span> <span class="o">=</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">;</span>
+<span class="nv">$author</span><span class="o">-&gt;</span><span class="na">last_name</span> <span class="o">=</span> <span class="s1">&#39;Potencier&#39;</span><span class="p">;</span>
+
+<span class="nv">$book</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Book</span><span class="p">();</span>
+<span class="nv">$book</span><span class="o">-&gt;</span><span class="na">title</span> <span class="o">=</span> <span class="s1">&#39;My Book&#39;</span><span class="p">;</span>
+<span class="nv">$book</span><span class="o">-&gt;</span><span class="na">author</span> <span class="o">=</span> <span class="nv">$author</span><span class="p">;</span>
+
+<span class="nv">$metadata</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;validator.mapping.class_metadata_factory&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getClassMetadata</span><span class="p">(</span><span class="s1">&#39;Author&#39;</span><span class="p">);</span>
+<span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\NotBlank</span><span class="p">());</span>
+<span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;last_name&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+
+<span class="nv">$metadata</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;validator.mapping.class_metadata_factory&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">getClassMetadata</span><span class="p">(</span><span class="s1">&#39;Book&#39;</span><span class="p">);</span>
+<span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\Valid</span><span class="p">());</span>
+
+<span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;validator&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$book</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$error</span><span class="o">-&gt;</span><span class="na">getPropertyPath</span><span class="p">()</span><span class="o">.</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s1">&#39;The author is valid&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>You can also declare the class constraint by adding a static
+<tt class="docutils literal"><code>loadValidatorMetadata</code></tt> method to your classes:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Symfony\Component\Validator\Mapping\ClassMetadata</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\Validator\Constraints</span> <span class="k">as</span> <span class="nx">Assert</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Book</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$title</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$author</span><span class="p">;</span>
+
+    <span class="k">static</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">loadValidatorMetadata</span><span class="p">(</span><span class="nx">ClassMetadata</span> <span class="nv">$metadata</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\Valid</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Author</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$first_name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$last_name</span><span class="p">;</span>
+
+    <span class="k">static</span> <span class="k">public</span> <span class="k">function</span> <span class="nf">loadValidatorMetadata</span><span class="p">(</span><span class="nx">ClassMetadata</span> <span class="nv">$metadata</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\NotBlank</span><span class="p">());</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+        <span class="nv">$metadata</span><span class="o">-&gt;</span><span class="na">addPropertyConstraint</span><span class="p">(</span><span class="s1">&#39;last_name&#39;</span><span class="p">,</span> <span class="k">new</span> <span class="nx">Assert\MinLength</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/validate/{email}&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$email</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$author</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Author</span><span class="p">();</span>
+    <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">first_name</span> <span class="o">=</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">;</span>
+    <span class="nv">$author</span><span class="o">-&gt;</span><span class="na">last_name</span> <span class="o">=</span> <span class="s1">&#39;Potencier&#39;</span><span class="p">;</span>
+
+    <span class="nv">$book</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Book</span><span class="p">();</span>
+    <span class="nv">$book</span><span class="o">-&gt;</span><span class="na">title</span> <span class="o">=</span> <span class="s1">&#39;My Book&#39;</span><span class="p">;</span>
+    <span class="nv">$book</span><span class="o">-&gt;</span><span class="na">author</span> <span class="o">=</span> <span class="nv">$author</span><span class="p">;</span>
+
+    <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;validator&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$book</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nv">$errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="nv">$error</span><span class="o">-&gt;</span><span class="na">getPropertyPath</span><span class="p">()</span><span class="o">.</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;The author is valid&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">Use <tt class="docutils literal"><code>addGetterConstraint()</code></tt> to add constraints on getter methods and
+<tt class="docutils literal"><code>addConstraint()</code></tt> to add constraints on the class itself.</p>
+</div></div>
+</div>
+<div class="section" id="translation">
+<h3>Translation<a class="headerlink" href="validator.html#translation" title="Permalink to this headline">¶</a></h3>
+<p>To be able to translate the error messages, you can use the translator
+provider and register the messages under the <tt class="docutils literal"><code>validators</code></tt> domain:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;translator.domains&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;validators&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;fr&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;This value should be a valid number.&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Cette valeur doit être un nombre.&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">),</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>For more information, consult the <a class="reference external" href="http://symfony.com/doc/2.0/book/validation.html">Symfony2 Validation documentation</a>.</p>
+</div>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="UrlGeneratorServiceProvider" href="url_generator.html">
+                    &laquo;&nbsp;UrlGeneratorServiceProvider
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="FormServiceProvider" href="form.html">
+                    FormServiceProvider&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

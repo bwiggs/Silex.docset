@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>Services - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../documentation">DOCUMENTATION</a></li>
+              <li><a href="../download">DOWNLOAD</a></li>
+              <li><a href="../development">DEVELOPMENT</a></li>
+              <li><a href="../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="services.html#">Services</a><ul>
+<li><a class="reference internal" href="services.html#dependency-injection">Dependency Injection</a><ul>
+<li><a class="reference internal" href="services.html#container">Container</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="services.html#id1">Pimple</a><ul>
+<li><a class="reference internal" href="services.html#parameters">Parameters</a></li>
+<li><a class="reference internal" href="services.html#service-definitions">Service definitions</a></li>
+<li><a class="reference internal" href="services.html#shared-services">Shared services</a></li>
+<li><a class="reference internal" href="services.html#access-container-from-closure">Access container from closure</a></li>
+<li><a class="reference internal" href="services.html#protected-closures">Protected closures</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="services.html#core-services">Core services</a></li>
+<li><a class="reference internal" href="services.html#core-parameters">Core parameters</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/services.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="services">
+<h1>Services<a class="headerlink" href="services.html#services" title="Permalink to this headline">¶</a></h1>
+<p>Silex is not only a microframework. It is also a micro service container. It
+does this by extending <a class="reference external" href="http://pimple.sensiolabs.org">Pimple</a> which provides
+service goodness in just 44 NCLOC.</p>
+<div class="section" id="dependency-injection">
+<h2>Dependency Injection<a class="headerlink" href="services.html#dependency-injection" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">You can skip this if you already know what Dependency Injection is.</p>
+</div></div>
+<p>Dependency Injection is a design pattern where you pass dependencies to
+services instead of creating them from within the service or relying on
+globals. This generally leads to code that is decoupled, re-usable, flexible
+and testable.</p>
+<p>Here is an example of a class that takes a <tt class="docutils literal"><code>User</code></tt> object and stores it as a
+file in JSON format:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">JsonUserPersister</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$basePath</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$basePath</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">basePath</span> <span class="o">=</span> <span class="nv">$basePath</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">persist</span><span class="p">(</span><span class="nx">User</span> <span class="nv">$user</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">getAttributes</span><span class="p">();</span>
+        <span class="nv">$json</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$filename</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">basePath</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">id</span><span class="o">.</span><span class="s1">&#39;.json&#39;</span><span class="p">;</span>
+        <span class="nb">file_put_contents</span><span class="p">(</span><span class="nv">$filename</span><span class="p">,</span> <span class="nv">$json</span><span class="p">,</span> <span class="nx">LOCK_EX</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>In this simple example the dependency is the <tt class="docutils literal"><code>basePath</code></tt> property. It is
+passed to the constructor. This means you can create several independent
+instances with different base paths. Of course dependencies do not have to be
+simple strings. More often they are in fact other services.</p>
+<div class="section" id="container">
+<h3>Container<a class="headerlink" href="services.html#container" title="Permalink to this headline">¶</a></h3>
+<p>A DIC or service container is responsible for creating and storing services.
+It can recursively create dependencies of the requested services and inject
+them. It does so lazily, which means a service is only created when you
+actually need it.</p>
+<p>Most containers are quite complex and are configured through XML or YAML
+files.</p>
+<p>Pimple is different.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Pimple<a class="headerlink" href="services.html#id1" title="Permalink to this headline">¶</a></h2>
+<p>Pimple is probably the simplest service container out there. It makes strong
+use of closures and implements the ArrayAccess interface.</p>
+<p>We will start off by creating a new instance of Pimple -- and because
+<tt class="docutils literal"><code>Silex\Application</code></tt> extends <tt class="docutils literal"><code>Pimple</code></tt> all of this applies to Silex as
+well:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$container</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Pimple</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>or:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Silex\Application</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div></div>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="services.html#parameters" title="Permalink to this headline">¶</a></h3>
+<p>You can set parameters (which are usually strings) by setting an array key on
+the container:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;some_parameter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>The array key can be anything, by convention periods are used for
+namespacing:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;asset.host&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;http://cdn.mysite.com/&#39;</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Reading parameter values is possible with the same syntax:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;some_parameter&#39;</span><span class="p">];</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="service-definitions">
+<h3>Service definitions<a class="headerlink" href="services.html#service-definitions" title="Permalink to this headline">¶</a></h3>
+<p>Defining services is no different than defining parameters. You just set an
+array key on the container to be a closure. However, when you retrieve the
+service, the closure is executed. This allows for lazy service creation:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;some_service&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Service</span><span class="p">();</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>And to retrieve the service, use:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$service</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;some_service&#39;</span><span class="p">];</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Every time you call <tt class="docutils literal"><code>$app['some_service']</code></tt>, a new instance of the service is
+created.</p>
+</div>
+<div class="section" id="shared-services">
+<h3>Shared services<a class="headerlink" href="services.html#shared-services" title="Permalink to this headline">¶</a></h3>
+<p>You may want to use the same instance of a service across all of your code. In
+order to do that you can make a <em>shared</em> service:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;some_service&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">share</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Service</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>This will create the service on first invocation, and then return the existing
+instance on any subsequent access.</p>
+</div>
+<div class="section" id="access-container-from-closure">
+<h3>Access container from closure<a class="headerlink" href="services.html#access-container-from-closure" title="Permalink to this headline">¶</a></h3>
+<p>In many cases you will want to access the service container from within a
+service definition closure. For example when fetching services the current
+service depends on.</p>
+<p>Because of this, the container is passed to the closure as an argument:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;some_service&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Service</span><span class="p">(</span><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;some_other_service&#39;</span><span class="p">],</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;some_service.config&#39;</span><span class="p">]);</span>
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Here you can see an example of Dependency Injection. <tt class="docutils literal"><code>some_service</code></tt> depends
+on <tt class="docutils literal"><code>some_other_service</code></tt> and takes <tt class="docutils literal"><code>some_service.config</code></tt> as configuration
+options. The dependency is only created when <tt class="docutils literal"><code>some_service</code></tt> is accessed, and
+it is possible to replace either of the dependencies by simply overriding
+those definitions.</p>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">This also works for shared services.</p>
+</div></div>
+</div>
+<div class="section" id="protected-closures">
+<h3>Protected closures<a class="headerlink" href="services.html#protected-closures" title="Permalink to this headline">¶</a></h3>
+<p>Because the container sees closures as factories for services, it will always
+execute them when reading them.</p>
+<p>In some cases you will however want to store a closure as a parameter, so that
+you can fetch it and execute it yourself -- with your own arguments.</p>
+<p>This is why Pimple allows you to protect your closures from being executed, by
+using the <tt class="docutils literal"><code>protect</code></tt> method:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;closure_parameter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">protect</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">// will not execute the closure</span>
+<span class="nv">$add</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;closure_parameter&#39;</span><span class="p">];</span>
+
+<span class="c1">// calling it now</span>
+<span class="k">echo</span> <span class="nv">$add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Note that protected closures do not get access to the container.</p>
+</div>
+</div>
+<div class="section" id="core-services">
+<h2>Core services<a class="headerlink" href="services.html#core-services" title="Permalink to this headline">¶</a></h2>
+<p>Silex defines a range of services which can be used or replaced. You probably
+don't want to mess with most of them.</p>
+<ul>
+<li><p class="first"><strong>request</strong>: Contains the current request object, which is an instance of
+<a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpFoundation/Request.html">Request</a>.
+It gives you access to <tt class="docutils literal"><code>GET</code></tt>, <tt class="docutils literal"><code>POST</code></tt> parameters and lots more!</p>
+<p>Example usage:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$id</span> <span class="o">=</span> <span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;request&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>This is only available when a request is being served, you can only access
+it from within a controller, an application before/after middlewares, or an
+error handler.</p>
+</li>
+<li><p class="first"><strong>routes</strong>: The <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Routing/RouteCollection.html">RouteCollection</a>
+that is used internally. You can add, modify, read routes.</p>
+</li>
+<li><p class="first"><strong>controllers</strong>: The <tt class="docutils literal"><code>Silex\ControllerCollection</code></tt> that is used internally.
+Check the <em>Internals</em> chapter for more information.</p>
+</li>
+<li><p class="first"><strong>dispatcher</strong>: The <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/EventDispatcher/EventDispatcher.html">EventDispatcher</a>
+that is used internally. It is the core of the Symfony2 system and is used
+quite a bit by Silex.</p>
+</li>
+<li><p class="first"><strong>resolver</strong>: The <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpKernel/Controller/ControllerResolver.html">ControllerResolver</a>
+that is used internally. It takes care of executing the controller with the
+right arguments.</p>
+</li>
+<li><p class="first"><strong>kernel</strong>: The <a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpKernel/HttpKernel.html">HttpKernel</a>
+that is used internally. The HttpKernel is the heart of Symfony2, it takes a
+Request as input and returns a Response as output.</p>
+</li>
+<li><p class="first"><strong>request_context</strong>: The request context is a simplified representation of
+the request that is used by the Router and the UrlGenerator.</p>
+</li>
+<li><p class="first"><strong>exception_handler</strong>: The Exception handler is the default handler that is
+used when you don't register one via the <tt class="docutils literal"><code>error()</code></tt> method or if your handler
+does not return a Response. Disable it with
+<tt class="docutils literal"><code>$app['exception_handler']-&gt;disable()</code></tt>.</p>
+</li>
+<li><p class="first"><strong>logger</strong>: A
+<a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpKernel/Log/LoggerInterface.html">LoggerInterface</a>
+instance. By default, logging is disabled as the value is set to <tt class="docutils literal"><code>null</code></tt>.
+When the Symfony2 Monolog bridge is installed, Monolog is automatically used
+as the default logger.</p>
+</li>
+</ul>
+<div class="admonition-wrapper">
+<div class="note"></div><div class="admonition admonition-note"><p class="first admonition-title">Note</p>
+<p class="last">All of these Silex core services are shared.</p>
+</div></div>
+</div>
+<div class="section" id="core-parameters">
+<h2>Core parameters<a class="headerlink" href="services.html#core-parameters" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>request.http_port</strong> (optional): Allows you to override the default port
+for non-HTTPS URLs. If the current request is HTTP, it will always use the
+current port.</p>
+<p>Defaults to 80.</p>
+<p>This parameter can be used by the <tt class="docutils literal"><code>UrlGeneratorProvider</code></tt>.</p>
+</li>
+<li><p class="first"><strong>request.https_port</strong> (optional): Allows you to override the default port
+for HTTPS URLs. If the current request is HTTPS, it will always use the
+current port.</p>
+<p>Defaults to 443.</p>
+<p>This parameter can be used by the <tt class="docutils literal"><code>UrlGeneratorProvider</code></tt>.</p>
+</li>
+<li><p class="first"><strong>locale</strong> (optional): The locale of the user. When set before any request
+handling, it defines the default locale (<tt class="docutils literal"><code>en</code></tt> by default). When a request
+is being handled, it is automatically set according to the <tt class="docutils literal"><code>_locale</code></tt>
+request attribute of the current route.</p>
+</li>
+<li><p class="first"><strong>debug</strong> (optional): Returns whether or not the application is running in
+debug mode.</p>
+<p>Defaults to false.</p>
+</li>
+<li><p class="first"><strong>charset</strong> (optional): The charset to use for Responses.</p>
+<p>Defaults to UTF-8.</p>
+</li>
+</ul>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="Modularity" href="modularity.html">
+                    &laquo;&nbsp;Modularity
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="Providers" href="providers.html">
+                    Providers&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

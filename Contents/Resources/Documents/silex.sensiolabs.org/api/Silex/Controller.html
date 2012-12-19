@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Silex\Controller | Silex API</title>
+                    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../classes.html">Classes</a></li>
+                            <li><a href="../namespaces.html">Namespaces</a></li>
+                        <li><a href="../interfaces.html">Interfaces</a></li>
+            <li><a href="../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">Silex API</div>
+
+            <div class="type">Class</div>
+    <h1><a href="../Silex.html">Silex</a>\Controller</h1>
+    </div>
+        <div class="content">
+                <p>class    <strong>Controller</strong></p>
+
+            <div class="description">
+            <p>A wrapper for a controller, mapped to a route.</p>
+            <p>__call() forwards method-calls to Route, but returns instance of Controller<br />
+ listing Route&#039;s methods below, so that IDEs know they are valid</p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="Controller.html#method___construct">__construct</a>(<a href="Route.html"><abbr title="Silex\Route">Route</abbr></a> $route)
+                    <p>Constructor.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Route.html"><abbr title="Silex\Route">Route</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="Controller.html#method_getRoute">getRoute</a>()
+                    <p>Gets the controller&#039;s route.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="Controller.html#method_getRouteName">getRouteName</a>()
+                    <p>Gets the controller&#039;s route name.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Controller.html"><abbr title="Silex\Controller">Controller</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="Controller.html#method_bind">bind</a>(string $routeName)
+                    <p>Sets the controller&#039;s route.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="Controller.html#method___call">__call</a>($method, $arguments)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="Controller.html#method_freeze">freeze</a>()
+                    <p>Freezes the controller.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="Controller.html#method_generateRouteName">generateRouteName</a>($prefix)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 43</div>
+        <code>            public            
+    <strong>__construct</strong>(<a href="Route.html"><abbr title="Silex\Route">Route</abbr></a> $route)</code>
+    </h3>
+    <div class="details">
+        <p>Constructor.</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="Route.html"><abbr title="Silex\Route">Route</abbr></a></td>
+                <td>$route</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getRoute">
+        <div class="location">at line 53</div>
+        <code>            public            <a href="Route.html"><abbr title="Silex\Route">Route</abbr></a>
+    <strong>getRoute</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Gets the controller&#039;s route.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Route.html"><abbr title="Silex\Route">Route</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getRouteName">
+        <div class="location">at line 63</div>
+        <code>            public            string
+    <strong>getRouteName</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Gets the controller&#039;s route name.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_bind">
+        <div class="location">at line 75</div>
+        <code>            public            <a href="Controller.html"><abbr title="Silex\Controller">Controller</abbr></a>
+    <strong>bind</strong>(string $routeName)</code>
+    </h3>
+    <div class="details">
+        <p>Sets the controller&#039;s route.</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$routeName</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Controller.html"><abbr title="Silex\Controller">Controller</abbr></a></td>
+            <td>$this The current Controller instance</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method___call">
+        <div class="location">at line 86</div>
+        <code>            public            
+    <strong>__call</strong>($method, $arguments)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$method</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$arguments</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_freeze">
+        <div class="location">at line 102</div>
+        <code>            public            
+    <strong>freeze</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Freezes the controller.</p>
+        <p>Once the controller is frozen, you can no longer change the route name</p>
+        <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_generateRouteName">
+        <div class="location">at line 107</div>
+        <code>            public            
+    <strong>generateRouteName</strong>($prefix)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$prefix</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>
