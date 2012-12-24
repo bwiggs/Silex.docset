@@ -4,7 +4,11 @@ from bs4 import BeautifulSoup
 import glob
 import sqlite3
 
-conn = sqlite3.connect('docSet.dsidx')
+RESOURCES = "Contents/Resources/"
+DOCUMENTS = RESOURCES + "Documents/"
+PATH = DOCUMENTS + "silex.sensiolabs.org/"
+
+conn = sqlite3.connect('Contents/Resources/docSet.dsidx')
 
 # DROP table
 print "Dropping searchIndex"
@@ -16,14 +20,14 @@ conn.execute("create table if not exists searchIndex (id integer PRIMARY KEY AUT
 conn.commit()
 
 # GUIDES
-files = glob.glob("Documents/silex.sensiolabs.org/doc/*.html")
+files = glob.glob(PATH + "doc/*.html")
 for filename in files:
     print "Parsing: " + filename
     soup = BeautifulSoup(open(filename).read())
     sections = soup.find_all("h1")[1]
     section = sections.get_text()[:-1]
 
-    sql = "INSERT INTO searchindex VALUES ( NULL, '%s', '%s', '%s')" % ( section, "Guide", filename[10:] + "#" + sections.a['href'].split('#')[1] )
+    sql = "INSERT INTO searchindex VALUES ( NULL, '%s', '%s', '%s')" % ( section, "Guide", filename[len(DOCUMENTS):] + "#" + sections.a['href'].split('#')[1] )
     conn.execute(sql)
     conn.commit()
 
@@ -34,7 +38,7 @@ for filename in files:
         entry = {
                 'name': "%s - %s" % (section, topic),
                 'docType': "Guide",
-                'path': filename[10:] + "#" + anchor
+                'path': filename[len(DOCUMENTS):] + "#" + anchor
         }
 
         sql = "INSERT INTO searchindex VALUES ( NULL, '%s', '%s', '%s')" % ( entry['name'], entry['docType'], entry['path'] )
@@ -42,9 +46,9 @@ for filename in files:
         conn.commit()
 
 # Providers
-files = glob.glob("Documents/silex.sensiolabs.org/doc/providers/*.html")
+files = glob.glob(PATH + "doc/providers/*.html")
 for filename in files:
-    if filename == "Documents/silex.sensiolabs.org/doc/providers/index.html":
+    if filename == PATH + "doc/providers/index.html":
         continue
     print "Parsing: " + filename
     soup = BeautifulSoup(open(filename).read())
@@ -56,16 +60,16 @@ for filename in files:
         entry = {
                 "name": topic,
                 "docType": "Guide",
-                "path": filename[10:] + "#" + anchor
+                "path": filename[len(DOCUMENTS):] + "#" + anchor
         }
         sql = "INSERT INTO searchindex VALUES ( NULL, '%s', '%s', '%s')" % ( entry['name'], entry['docType'], entry['path'] )
         conn.execute(sql)
         conn.commit()
 
 # API
-files = glob.glob("Documents/silex.sensiolabs.org/doc/providers/*.html")
+files = glob.glob(PATH + "doc/providers/*.html")
 for filename in files:
-    if filename == "Documents/silex.sensiolabs.org/doc/providers/index.html":
+    if filename == PATH + "doc/providers/index.html":
         continue
     print "Parsing: " + filename
     soup = BeautifulSoup(open(filename).read())
@@ -77,7 +81,7 @@ for filename in files:
         entry = {
                 "name": topic,
                 "docType": "Guide",
-                "path": filename[10:] + "#" + anchor
+                "path": filename[len(DOCUMENTS):] + "#" + anchor
         }
         sql = "INSERT INTO searchindex VALUES ( NULL, '%s', '%s', '%s')" % ( entry['name'], entry['docType'], entry['path'] )
         conn.execute(sql)
