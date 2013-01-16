@@ -79,14 +79,18 @@ for root, dirnames, filenames in os.walk(PATH + "api/Silex"):
 
         # parse the html
         soup = BeautifulSoup(open(filePath).read())
-        name = soup.find_all("h1")[0].get_text().split("\\")[-1]
+        name = soup.find_all("h1")[0].get_text()
         rawType = soup.find_all("div", class_ = "type")[0].get_text()
 
         # get the type
         if rawType == "Class":
-            rawType = "cl"
+            rawType = "Class"
+            name = name.split('\\')[-1];
         elif rawType == "Interface":
-            rawType = "intf"
+            rawType = "Interface"
+            name = name.split('\\')[-1];
+        elif rawType == "Namespace":
+            rawType = "Namespace"
         else:
             continue
         
@@ -100,5 +104,6 @@ for root, dirnames, filenames in os.walk(PATH + "api/Silex"):
             anchor = method["id"]
             methodName = method.select("code strong")[0]
             conn.execute(SQL_INSERT % (name + "::" + methodName.get_text(), "clm", htmlFile + "#" + anchor));
+
             conn.commit()
 
