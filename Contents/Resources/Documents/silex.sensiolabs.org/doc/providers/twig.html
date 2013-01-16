@@ -244,12 +244,12 @@ object.</li>
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">]);</span>
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">]);</span>
 
 <span class="nv">$response</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Response</span><span class="p">();</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setTtl</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 
-<span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">],</span> <span class="nv">$response</span><span class="p">);</span>
+<span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">],</span> <span class="nv">$response</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div></div>
 <div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -258,7 +258,7 @@ object.</li>
 4</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// stream a view</span>
 <span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\StreamedResponse</span><span class="p">;</span>
 
-<span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">],</span> <span class="k">new</span> <span class="nx">StreamedResponse</span><span class="p">());</span>
+<span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Fabien&#39;</span><span class="p">],</span> <span class="k">new</span> <span class="nx">StreamedResponse</span><span class="p">());</span>
 </pre></div>
 </td></tr></table></div></div>
 </div>

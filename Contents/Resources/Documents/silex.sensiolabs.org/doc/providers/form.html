@@ -179,8 +179,14 @@ components:</p>
 </div></div>
 <p>The Symfony Form Component relies on the PHP intl extension. If you don't have
 it, you can install the Symfony Locale Component as a replacement:</p>
-<div class="literal-block"><div class="last highlight-json"><pre>"require": {
+<div class="literal-block"><div class="highlight-json"><pre>"require": {
     "symfony/locale": "2.1.*"
+}</pre>
+</div></div>
+<p>If you want to use forms in your Twig templates, make sure to install the
+Symfony Twig Bridge:</p>
+<div class="literal-block"><div class="last highlight-json"><pre>"require": {
+    "symfony/twig-bridge": "2.1.*"
 }</pre>
 </div></div>
 </div></div>
@@ -254,7 +260,8 @@ example:</p>
 <span class="p">});</span>
 </pre></div>
 </td></tr></table></div></div>
-<p>And here is the <tt class="docutils literal"><code>index.twig</code></tt> form template:</p>
+<p>And here is the <tt class="docutils literal"><code>index.twig</code></tt> form template (requires <tt class="docutils literal"><code>symfony/twig-
+bridge</code></tt>):</p>
 <div class="literal-block"><div class="highlight-jinja"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3

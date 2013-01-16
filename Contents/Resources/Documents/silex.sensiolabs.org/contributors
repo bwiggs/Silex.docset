@@ -79,18 +79,1854 @@
       <div class="content">
             <h2>Top Contributors (Code)</h2>
 
-    <p>0 developers have contributed to the <a href="https://github.com/fabpot/Silex">Silex</a> code.</p>
+    <p>39 developers have contributed to the <a href="https://github.com/fabpot/Silex">Silex</a> code.</p>
 
     <ol class="contributors">
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4aed4f5d-e0cb-4320-902f-885fddaa7d15"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/4aed4f5d-e0cb-4320-902f-885fddaa7d15.png?format=40x40" alt="Fabien Potencier"></a>
+                            </div>
+
+            <div>
+                1.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4aed4f5d-e0cb-4320-902f-885fddaa7d15">Fabien Potencier</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=fabpot">271</a> commits
+                                        <small> &mdash; 14,478 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/92755778-7f2a-478b-982e-d97d667d7b8a"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/92755778-7f2a-478b-982e-d97d667d7b8a.png?format=40x40" alt="Igor Wiedler"></a>
+                            </div>
+
+            <div>
+                2.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/92755778-7f2a-478b-982e-d97d667d7b8a">Igor Wiedler</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=igorw">108</a> commits
+                                        <small> &mdash; 6,314 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f13d1c41-d5d5-4280-aaf1-9b22c9e6c24d"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/f13d1c41-d5d5-4280-aaf1-9b22c9e6c24d.png?format=40x40" alt="Dave Marshall"></a>
+                            </div>
+
+            <div>
+                3.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f13d1c41-d5d5-4280-aaf1-9b22c9e6c24d">Dave Marshall</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=davedevelopment">10</a> commits
+                                        <small> &mdash; 383 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/c81121f4-fd7a-49b0-9284-cef4b0dde8e7"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/c81121f4-fd7a-49b0-9284-cef4b0dde8e7.png?format=40x40" alt="Christophe Coevoet"></a>
+                            </div>
+
+            <div>
+                4.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/c81121f4-fd7a-49b0-9284-cef4b0dde8e7">Christophe Coevoet</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=stof">9</a> commits
+                                        <small> &mdash; 115 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/90f28e69-9ce9-4a42-8b0e-e8c7fcc27713"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/90f28e69-9ce9-4a42-8b0e-e8c7fcc27713.png?format=40x40" alt="Grégoire Pineau"></a>
+                            </div>
+
+            <div>
+                5.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/90f28e69-9ce9-4a42-8b0e-e8c7fcc27713">Grégoire Pineau</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=lyrixx">5</a> commits
+                                        <small> &mdash; 150 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/16dace45-c1c6-4563-9273-89374bc98a48"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/16dace45-c1c6-4563-9273-89374bc98a48.png?format=40x40" alt="Ricard Clau"></a>
+                            </div>
+
+            <div>
+                6.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/16dace45-c1c6-4563-9273-89374bc98a48">Ricard Clau</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=ricardclau">4</a> commits
+                                        <small> &mdash; 127 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/b5f6c549-93c6-4118-a549-cf97f9effd54"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/b5f6c549-93c6-4118-a549-cf97f9effd54.png?format=40x40" alt="Romain Neutron"></a>
+                            </div>
+
+            <div>
+                7.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/b5f6c549-93c6-4118-a549-cf97f9effd54">Romain Neutron</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=romainneutron">3</a> commits
+                                        <small> &mdash; 108 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/0ecea148-2645-4913-8f48-652a03f14bc6"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/0ecea148-2645-4913-8f48-652a03f14bc6.png?format=40x40" alt="Jérôme Tamarelle"></a>
+                            </div>
+
+            <div>
+                8.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/0ecea148-2645-4913-8f48-652a03f14bc6">Jérôme Tamarelle</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=GromNaN">3</a> commits
+                                        <small> &mdash; 35 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Slavi Pantaleev">
+                            </div>
+
+            <div>
+                9.
+                                    Slavi Pantaleev
+                
+                <br />
+
+                <small>
+                                            2 commits
+                                        <small> &mdash; 153 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4e5071e3-ab33-40b5-8ad4-7029ebb93af2"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/4e5071e3-ab33-40b5-8ad4-7029ebb93af2.png?format=40x40" alt="Marijn Huizendveld"></a>
+                            </div>
+
+            <div>
+                10.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4e5071e3-ab33-40b5-8ad4-7029ebb93af2">Marijn Huizendveld</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=marijn">2</a> commits
+                                        <small> &mdash; 123 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/89cfada4-c499-40b7-b16b-05844b3f6a29"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/89cfada4-c499-40b7-b16b-05844b3f6a29.png?format=40x40" alt="Leszek Prabucki"></a>
+                            </div>
+
+            <div>
+                11.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/89cfada4-c499-40b7-b16b-05844b3f6a29">Leszek Prabucki</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=l3l0">2</a> commits
+                                        <small> &mdash; 111 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Hugo Hamon">
+                            </div>
+
+            <div>
+                12.
+                                    Hugo Hamon
+                
+                <br />
+
+                <small>
+                                            2 commits
+                                        <small> &mdash; 54 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Guillermo">
+                            </div>
+
+            <div>
+                13.
+                                    Guillermo
+                
+                <br />
+
+                <small>
+                                            2 commits
+                                        <small> &mdash; 31 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f18908ed-829f-4a25-97be-921ea6db2da5"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/f18908ed-829f-4a25-97be-921ea6db2da5.png?format=40x40" alt="Adel ELHAIBA"></a>
+                            </div>
+
+            <div>
+                14.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f18908ed-829f-4a25-97be-921ea6db2da5">Adel ELHAIBA</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=Adel-E">2</a> commits
+                                        <small> &mdash; 22 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/21c7abf2-a970-433e-be9a-d06fb9419d24"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/21c7abf2-a970-433e-be9a-d06fb9419d24.png?format=40x40" alt="Pascal Borreli"></a>
+                            </div>
+
+            <div>
+                15.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/21c7abf2-a970-433e-be9a-d06fb9419d24">Pascal Borreli</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=pborreli">2</a> commits
+                                        <small> &mdash; 6 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="DrBenton">
+                            </div>
+
+            <div>
+                16.
+                                    DrBenton
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 146 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Chris Ramakers">
+                            </div>
+
+            <div>
+                17.
+                                    Chris Ramakers
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 133 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/94203166-4acd-43db-b91e-329989ea5abd"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/94203166-4acd-43db-b91e-329989ea5abd.png?format=40x40" alt="Greg Militello"></a>
+                            </div>
+
+            <div>
+                18.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/94203166-4acd-43db-b91e-329989ea5abd">Greg Militello</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=awildeep">1</a> commits
+                                        <small> &mdash; 113 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/28814639-9ad6-4670-aca6-ac10a0d48093"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/28814639-9ad6-4670-aca6-ac10a0d48093.png?format=40x40" alt="Dennis Coorn"></a>
+                            </div>
+
+            <div>
+                19.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/28814639-9ad6-4670-aca6-ac10a0d48093">Dennis Coorn</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=denniscoorn">1</a> commits
+                                        <small> &mdash; 100 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/05b5fd94-52d8-42ce-be03-6b645a8b0a3e"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/05b5fd94-52d8-42ce-be03-6b645a8b0a3e.png?format=40x40" alt="Javier López"></a>
+                            </div>
+
+            <div>
+                20.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/05b5fd94-52d8-42ce-be03-6b645a8b0a3e">Javier López</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=loalf">1</a> commits
+                                        <small> &mdash; 49 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/3298b5ce-d635-46e6-960a-856d29f52b2a"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/3298b5ce-d635-46e6-960a-856d29f52b2a.png?format=40x40" alt="Nicolas Le Goff"></a>
+                            </div>
+
+            <div>
+                21.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/3298b5ce-d635-46e6-960a-856d29f52b2a">Nicolas Le Goff</a>
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 43 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/07f58ce9-2a4a-47d2-949f-1e1d37598bed"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/07f58ce9-2a4a-47d2-949f-1e1d37598bed.png?format=40x40" alt="Klaus Silveira"></a>
+                            </div>
+
+            <div>
+                22.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/07f58ce9-2a4a-47d2-949f-1e1d37598bed">Klaus Silveira</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=klaussilveira">1</a> commits
+                                        <small> &mdash; 25 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/fed0c5ad-b7b5-4024-a751-0974f7465e75"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/fed0c5ad-b7b5-4024-a751-0974f7465e75.png?format=40x40" alt="Jeremy Mikola"></a>
+                            </div>
+
+            <div>
+                23.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/fed0c5ad-b7b5-4024-a751-0974f7465e75">Jeremy Mikola</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=jmikola">1</a> commits
+                                        <small> &mdash; 24 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/1ad28b40-6cb2-4667-8f2e-837732740211"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/1ad28b40-6cb2-4667-8f2e-837732740211.png?format=40x40" alt="Chris Sedlmayr"></a>
+                            </div>
+
+            <div>
+                24.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/1ad28b40-6cb2-4667-8f2e-837732740211">Chris Sedlmayr</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=catchamonkey">1</a> commits
+                                        <small> &mdash; 22 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/93d4dca0-9c4a-4ac0-bc0c-db3f925e3d2d"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/93d4dca0-9c4a-4ac0-bc0c-db3f925e3d2d.png?format=40x40" alt="Bilal Amarni"></a>
+                            </div>
+
+            <div>
+                25.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/93d4dca0-9c4a-4ac0-bc0c-db3f925e3d2d">Bilal Amarni</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=bamarni">1</a> commits
+                                        <small> &mdash; 18 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/750973b3-a841-4a21-8a50-b8befa249cd5"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/750973b3-a841-4a21-8a50-b8befa249cd5.png?format=40x40" alt="Jordi Boggiano"></a>
+                            </div>
+
+            <div>
+                26.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/750973b3-a841-4a21-8a50-b8befa249cd5">Jordi Boggiano</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=Seldaek">1</a> commits
+                                        <small> &mdash; 16 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/9e786616-9077-46ac-aeaa-c679d38cbeb9"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/9e786616-9077-46ac-aeaa-c679d38cbeb9.png?format=40x40" alt="Jérôme Macias"></a>
+                            </div>
+
+            <div>
+                27.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/9e786616-9077-46ac-aeaa-c679d38cbeb9">Jérôme Macias</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=jeromemacias">1</a> commits
+                                        <small> &mdash; 12 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Alexey Zakhlestin">
+                            </div>
+
+            <div>
+                28.
+                                    Alexey Zakhlestin
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 11 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="DerManoMann">
+                            </div>
+
+            <div>
+                29.
+                                    DerManoMann
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 8 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/b798fa08-18f3-4ba8-9e64-6f8fa1d5e00a"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/b798fa08-18f3-4ba8-9e64-6f8fa1d5e00a.png?format=40x40" alt="Henrik Bjørnskov"></a>
+                            </div>
+
+            <div>
+                30.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/b798fa08-18f3-4ba8-9e64-6f8fa1d5e00a">Henrik Bjørnskov</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=henrikbjorn">1</a> commits
+                                        <small> &mdash; 8 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/1a04f1b7-c58d-4636-8fff-a2e0474a9a0c"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/1a04f1b7-c58d-4636-8fff-a2e0474a9a0c.png?format=40x40" alt="Kris Wallsmith"></a>
+                            </div>
+
+            <div>
+                31.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/1a04f1b7-c58d-4636-8fff-a2e0474a9a0c">Kris Wallsmith</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=kriswallsmith">1</a> commits
+                                        <small> &mdash; 8 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Patrick Durold">
+                            </div>
+
+            <div>
+                32.
+                                    Patrick Durold
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Mateusz Heleniak">
+                            </div>
+
+            <div>
+                33.
+                                    Mateusz Heleniak
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="janschoenherr">
+                            </div>
+
+            <div>
+                34.
+                                    janschoenherr
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/a4aab9ea-2398-41c6-ac4a-986b2721b1e7"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/a4aab9ea-2398-41c6-ac4a-986b2721b1e7.png?format=40x40" alt="Kevin Boyd"></a>
+                            </div>
+
+            <div>
+                35.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/a4aab9ea-2398-41c6-ac4a-986b2721b1e7">Kevin Boyd</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=beryllium">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f50be54e-7bcd-4462-b164-e825fa8d4b6a"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/f50be54e-7bcd-4462-b164-e825fa8d4b6a.png?format=40x40" alt="Brikou Carré"></a>
+                            </div>
+
+            <div>
+                36.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f50be54e-7bcd-4462-b164-e825fa8d4b6a">Brikou Carré</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=brikou">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/1f294729-0fbe-430d-85a7-facf6aded8e5"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/1f294729-0fbe-430d-85a7-facf6aded8e5.png?format=40x40" alt="Masao Maeda"></a>
+                            </div>
+
+            <div>
+                37.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/1f294729-0fbe-430d-85a7-facf6aded8e5">Masao Maeda</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=brtriver">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="D-Rock">
+                            </div>
+
+            <div>
+                38.
+                                    D-Rock
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 1 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Pete Otaqui">
+                            </div>
+
+            <div>
+                39.
+                                    Pete Otaqui
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 1 changes</small>
+                </small>
+            </div>
+        </li>
     </ol>
 
 <div class="clearfix"></div>
 
     <h2>Top Contributors (Documentation)</h2>
 
-    <p>0 developers have contributed to the <a href="https://github.com/fabpot/Silex">Silex</a> documentation.</p>
+    <p>69 developers have contributed to the <a href="https://github.com/fabpot/Silex">Silex</a> documentation.</p>
 
     <ol class="contributors">
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4aed4f5d-e0cb-4320-902f-885fddaa7d15"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/4aed4f5d-e0cb-4320-902f-885fddaa7d15.png?format=40x40" alt="Fabien Potencier"></a>
+                            </div>
+
+            <div>
+                1.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4aed4f5d-e0cb-4320-902f-885fddaa7d15">Fabien Potencier</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=fabpot">225</a> commits
+                                        <small> &mdash; 7,577 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/92755778-7f2a-478b-982e-d97d667d7b8a"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/92755778-7f2a-478b-982e-d97d667d7b8a.png?format=40x40" alt="Igor Wiedler"></a>
+                            </div>
+
+            <div>
+                2.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/92755778-7f2a-478b-982e-d97d667d7b8a">Igor Wiedler</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=igorw">94</a> commits
+                                        <small> &mdash; 3,510 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/90f28e69-9ce9-4a42-8b0e-e8c7fcc27713"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/90f28e69-9ce9-4a42-8b0e-e8c7fcc27713.png?format=40x40" alt="Grégoire Pineau"></a>
+                            </div>
+
+            <div>
+                3.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/90f28e69-9ce9-4a42-8b0e-e8c7fcc27713">Grégoire Pineau</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=lyrixx">9</a> commits
+                                        <small> &mdash; 36 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/0ecea148-2645-4913-8f48-652a03f14bc6"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/0ecea148-2645-4913-8f48-652a03f14bc6.png?format=40x40" alt="Jérôme Tamarelle"></a>
+                            </div>
+
+            <div>
+                4.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/0ecea148-2645-4913-8f48-652a03f14bc6">Jérôme Tamarelle</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=GromNaN">6</a> commits
+                                        <small> &mdash; 85 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f13d1c41-d5d5-4280-aaf1-9b22c9e6c24d"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/f13d1c41-d5d5-4280-aaf1-9b22c9e6c24d.png?format=40x40" alt="Dave Marshall"></a>
+                            </div>
+
+            <div>
+                5.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f13d1c41-d5d5-4280-aaf1-9b22c9e6c24d">Dave Marshall</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=davedevelopment">5</a> commits
+                                        <small> &mdash; 149 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Benoit Pointet">
+                            </div>
+
+            <div>
+                6.
+                                    Benoit Pointet
+                
+                <br />
+
+                <small>
+                                            5 commits
+                                        <small> &mdash; 65 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/a551417e-8395-4190-acd1-67b2bf118b6d"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/a551417e-8395-4190-acd1-67b2bf118b6d.png?format=40x40" alt="Laurent Clouet"></a>
+                            </div>
+
+            <div>
+                7.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/a551417e-8395-4190-acd1-67b2bf118b6d">Laurent Clouet</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=laurent35240">4</a> commits
+                                        <small> &mdash; 28 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/1f294729-0fbe-430d-85a7-facf6aded8e5"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/1f294729-0fbe-430d-85a7-facf6aded8e5.png?format=40x40" alt="Masao Maeda"></a>
+                            </div>
+
+            <div>
+                8.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/1f294729-0fbe-430d-85a7-facf6aded8e5">Masao Maeda</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=brtriver">4</a> commits
+                                        <small> &mdash; 12 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Guillaume Potier">
+                            </div>
+
+            <div>
+                9.
+                                    Guillaume Potier
+                
+                <br />
+
+                <small>
+                                            3 commits
+                                        <small> &mdash; 47 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/263ba87b-8568-4a53-b543-5d14f1cbbfe0"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/263ba87b-8568-4a53-b543-5d14f1cbbfe0.png?format=40x40" alt="Саша Стаменковић"></a>
+                            </div>
+
+            <div>
+                10.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/263ba87b-8568-4a53-b543-5d14f1cbbfe0">Саша Стаменковић</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=umpirsky">3</a> commits
+                                        <small> &mdash; 27 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Alessandro Tagliapietra">
+                            </div>
+
+            <div>
+                11.
+                                    Alessandro Tagliapietra
+                
+                <br />
+
+                <small>
+                                            3 commits
+                                        <small> &mdash; 17 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/b5f6c549-93c6-4118-a549-cf97f9effd54"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/b5f6c549-93c6-4118-a549-cf97f9effd54.png?format=40x40" alt="Romain Neutron"></a>
+                            </div>
+
+            <div>
+                12.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/b5f6c549-93c6-4118-a549-cf97f9effd54">Romain Neutron</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=romainneutron">2</a> commits
+                                        <small> &mdash; 22 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/348798de-b5a6-42b0-b8ff-a400870545c2"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/348798de-b5a6-42b0-b8ff-a400870545c2.png?format=40x40" alt="Ben Longden"></a>
+                            </div>
+
+            <div>
+                13.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/348798de-b5a6-42b0-b8ff-a400870545c2">Ben Longden</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=blongden">2</a> commits
+                                        <small> &mdash; 18 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Frédéric Hardy">
+                            </div>
+
+            <div>
+                14.
+                                    Frédéric Hardy
+                
+                <br />
+
+                <small>
+                                            2 commits
+                                        <small> &mdash; 15 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Florian D">
+                            </div>
+
+            <div>
+                15.
+                                    Florian D
+                
+                <br />
+
+                <small>
+                                            2 commits
+                                        <small> &mdash; 8 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Mike Mackintosh">
+                            </div>
+
+            <div>
+                16.
+                                    Mike Mackintosh
+                
+                <br />
+
+                <small>
+                                            2 commits
+                                        <small> &mdash; 6 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Andy Dawson">
+                            </div>
+
+            <div>
+                17.
+                                    Andy Dawson
+                
+                <br />
+
+                <small>
+                                            2 commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/95e9d4f7-09ee-4e47-a6c6-60841f0f4eed"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/95e9d4f7-09ee-4e47-a6c6-60841f0f4eed.png?format=40x40" alt="Jacob Dreesen"></a>
+                            </div>
+
+            <div>
+                18.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/95e9d4f7-09ee-4e47-a6c6-60841f0f4eed">Jacob Dreesen</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=jdreesen">2</a> commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/6583d3e4-c424-400d-88d0-b48bd9a736cf"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/6583d3e4-c424-400d-88d0-b48bd9a736cf.png?format=40x40" alt="Denis Roussel"></a>
+                            </div>
+
+            <div>
+                19.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/6583d3e4-c424-400d-88d0-b48bd9a736cf">Denis Roussel</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=KuiKui">2</a> commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Hippolyte Alain">
+                            </div>
+
+            <div>
+                20.
+                                    Hippolyte Alain
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 112 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/94203166-4acd-43db-b91e-329989ea5abd"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/94203166-4acd-43db-b91e-329989ea5abd.png?format=40x40" alt="Greg Militello"></a>
+                            </div>
+
+            <div>
+                21.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/94203166-4acd-43db-b91e-329989ea5abd">Greg Militello</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=awildeep">1</a> commits
+                                        <small> &mdash; 86 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4e5071e3-ab33-40b5-8ad4-7029ebb93af2"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/4e5071e3-ab33-40b5-8ad4-7029ebb93af2.png?format=40x40" alt="Marijn Huizendveld"></a>
+                            </div>
+
+            <div>
+                22.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4e5071e3-ab33-40b5-8ad4-7029ebb93af2">Marijn Huizendveld</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=marijn">1</a> commits
+                                        <small> &mdash; 68 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="DrBenton">
+                            </div>
+
+            <div>
+                23.
+                                    DrBenton
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 57 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Hugo Hamon">
+                            </div>
+
+            <div>
+                24.
+                                    Hugo Hamon
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 53 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="ChrisRiddell">
+                            </div>
+
+            <div>
+                25.
+                                    ChrisRiddell
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 37 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/05b5fd94-52d8-42ce-be03-6b645a8b0a3e"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/05b5fd94-52d8-42ce-be03-6b645a8b0a3e.png?format=40x40" alt="Javier López"></a>
+                            </div>
+
+            <div>
+                26.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/05b5fd94-52d8-42ce-be03-6b645a8b0a3e">Javier López</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=loalf">1</a> commits
+                                        <small> &mdash; 34 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/5219b85a-5653-41c7-8cd9-afc615d8a3f8"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/5219b85a-5653-41c7-8cd9-afc615d8a3f8.png?format=40x40" alt="Adrien Brault"></a>
+                            </div>
+
+            <div>
+                27.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/5219b85a-5653-41c7-8cd9-afc615d8a3f8">Adrien Brault</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=adrienbrault">1</a> commits
+                                        <small> &mdash; 26 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/41f1ecd3-ad9b-4a4f-a911-d2446a3265f7"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/41f1ecd3-ad9b-4a4f-a911-d2446a3265f7.png?format=40x40" alt="Benoît Merlet"></a>
+                            </div>
+
+            <div>
+                28.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/41f1ecd3-ad9b-4a4f-a911-d2446a3265f7">Benoît Merlet</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=trompette">1</a> commits
+                                        <small> &mdash; 24 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Miha Vrhovnik">
+                            </div>
+
+            <div>
+                29.
+                                    Miha Vrhovnik
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 21 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/a2faceaa-764e-412f-bfa2-38b5a60f04eb"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/a2faceaa-764e-412f-bfa2-38b5a60f04eb.png?format=40x40" alt="Thibaut Cuvelier"></a>
+                            </div>
+
+            <div>
+                30.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/a2faceaa-764e-412f-bfa2-38b5a60f04eb">Thibaut Cuvelier</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=dourouc05">1</a> commits
+                                        <small> &mdash; 18 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/27ab857a-3b59-4e44-b3b8-7c4698d56b7f"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/27ab857a-3b59-4e44-b3b8-7c4698d56b7f.png?format=40x40" alt="Loïc Vernet"></a>
+                            </div>
+
+            <div>
+                31.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/27ab857a-3b59-4e44-b3b8-7c4698d56b7f">Loïc Vernet</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=COil">1</a> commits
+                                        <small> &mdash; 16 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4fac32b3-4242-4b60-a328-2f6fe1764eba"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/4fac32b3-4242-4b60-a328-2f6fe1764eba.png?format=40x40" alt="Jeremy Benoist"></a>
+                            </div>
+
+            <div>
+                32.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/4fac32b3-4242-4b60-a328-2f6fe1764eba">Jeremy Benoist</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=j0k3r">1</a> commits
+                                        <small> &mdash; 15 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="lukestokes">
+                            </div>
+
+            <div>
+                33.
+                                    lukestokes
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 14 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/aa5e22b0-6189-4113-9c68-91d4a3c32b7c"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/aa5e22b0-6189-4113-9c68-91d4a3c32b7c.png?format=40x40" alt="Marc Weistroff"></a>
+                            </div>
+
+            <div>
+                34.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/aa5e22b0-6189-4113-9c68-91d4a3c32b7c">Marc Weistroff</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=marcw">1</a> commits
+                                        <small> &mdash; 10 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/a997b588-4317-4525-b59f-8f2aaa7208da"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/a997b588-4317-4525-b59f-8f2aaa7208da.png?format=40x40" alt="Jordan Alliot"></a>
+                            </div>
+
+            <div>
+                35.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/a997b588-4317-4525-b59f-8f2aaa7208da">Jordan Alliot</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=jalliot">1</a> commits
+                                        <small> &mdash; 10 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/16dace45-c1c6-4563-9273-89374bc98a48"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/16dace45-c1c6-4563-9273-89374bc98a48.png?format=40x40" alt="Ricard Clau"></a>
+                            </div>
+
+            <div>
+                36.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/16dace45-c1c6-4563-9273-89374bc98a48">Ricard Clau</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=ricardclau">1</a> commits
+                                        <small> &mdash; 9 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/42e5d133-6218-4e4b-a9b8-e7bd70679bf0"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/42e5d133-6218-4e4b-a9b8-e7bd70679bf0.png?format=40x40" alt="Eric Clemmons"></a>
+                            </div>
+
+            <div>
+                37.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/42e5d133-6218-4e4b-a9b8-e7bd70679bf0">Eric Clemmons</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=ericclemmons">1</a> commits
+                                        <small> &mdash; 8 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/cd98fdfc-a838-47e3-afdb-722ea889196c"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/cd98fdfc-a838-47e3-afdb-722ea889196c.png?format=40x40" alt="Mathias Verraes"></a>
+                            </div>
+
+            <div>
+                38.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/cd98fdfc-a838-47e3-afdb-722ea889196c">Mathias Verraes</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=mathiasverraes">1</a> commits
+                                        <small> &mdash; 8 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Christoph Hochstrasser">
+                            </div>
+
+            <div>
+                39.
+                                    Christoph Hochstrasser
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 6 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/106f311e-87b0-411c-b001-4f4805164b4a"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/106f311e-87b0-411c-b001-4f4805164b4a.png?format=40x40" alt="Stefan Koopmanschap"></a>
+                            </div>
+
+            <div>
+                40.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/106f311e-87b0-411c-b001-4f4805164b4a">Stefan Koopmanschap</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=skoop">1</a> commits
+                                        <small> &mdash; 6 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Gregory Wood">
+                            </div>
+
+            <div>
+                41.
+                                    Gregory Wood
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 5 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Marcello Nuccio">
+                            </div>
+
+            <div>
+                42.
+                                    Marcello Nuccio
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="ujimaesteve">
+                            </div>
+
+            <div>
+                43.
+                                    ujimaesteve
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/6b4e6c7d-a8fa-448e-91f6-5d14f3967a5b"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/6b4e6c7d-a8fa-448e-91f6-5d14f3967a5b.png?format=40x40" alt="Besnik Brahimi"></a>
+                            </div>
+
+            <div>
+                44.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/6b4e6c7d-a8fa-448e-91f6-5d14f3967a5b">Besnik Brahimi</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=besnikb">1</a> commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/97091b0b-4ee1-4b7e-8ee5-956c1e476e58"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/97091b0b-4ee1-4b7e-8ee5-956c1e476e58.png?format=40x40" alt="Emanuele"></a>
+                            </div>
+
+            <div>
+                45.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/97091b0b-4ee1-4b7e-8ee5-956c1e476e58">Emanuele</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=EmanueleMinotto">1</a> commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/6951e43e-e69c-4068-ad6f-7e3d7e8b8da6"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/6951e43e-e69c-4068-ad6f-7e3d7e8b8da6.png?format=40x40" alt="Tony Lemke"></a>
+                            </div>
+
+            <div>
+                46.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/6951e43e-e69c-4068-ad6f-7e3d7e8b8da6">Tony Lemke</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=rejinka">1</a> commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/c6267259-1755-4830-a253-811ae56a707d"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/c6267259-1755-4830-a253-811ae56a707d.png?format=40x40" alt="Wouter De Jong"></a>
+                            </div>
+
+            <div>
+                47.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/c6267259-1755-4830-a253-811ae56a707d">Wouter De Jong</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=WouterJ">1</a> commits
+                                        <small> &mdash; 4 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="ChrisR07">
+                            </div>
+
+            <div>
+                48.
+                                    ChrisR07
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="hiciu">
+                            </div>
+
+            <div>
+                49.
+                                    hiciu
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Jay Williams">
+                            </div>
+
+            <div>
+                50.
+                                    Jay Williams
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="rarcega">
+                            </div>
+
+            <div>
+                51.
+                                    rarcega
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="neurolit">
+                            </div>
+
+            <div>
+                52.
+                                    neurolit
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Alchemy">
+                            </div>
+
+            <div>
+                53.
+                                    Alchemy
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Eyveer">
+                            </div>
+
+            <div>
+                54.
+                                    Eyveer
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/54720e6a-e310-44dc-a415-623d97c6bc2f"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/54720e6a-e310-44dc-a415-623d97c6bc2f.png?format=40x40" alt="Luis Cordova"></a>
+                            </div>
+
+            <div>
+                55.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/54720e6a-e310-44dc-a415-623d97c6bc2f">Luis Cordova</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=cordoval">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/fe7b9f30-d4b4-442d-8ab6-77c1f011a01e"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/fe7b9f30-d4b4-442d-8ab6-77c1f011a01e.png?format=40x40" alt="William Durand"></a>
+                            </div>
+
+            <div>
+                56.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/fe7b9f30-d4b4-442d-8ab6-77c1f011a01e">William Durand</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=willdurand">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f18908ed-829f-4a25-97be-921ea6db2da5"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/f18908ed-829f-4a25-97be-921ea6db2da5.png?format=40x40" alt="Adel ELHAIBA"></a>
+                            </div>
+
+            <div>
+                57.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/f18908ed-829f-4a25-97be-921ea6db2da5">Adel ELHAIBA</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=Adel-E">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/73ed3b3e-1068-4741-b1a6-fcc1cd90c52f"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/73ed3b3e-1068-4741-b1a6-fcc1cd90c52f.png?format=40x40" alt="Gilles Doge"></a>
+                            </div>
+
+            <div>
+                58.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/73ed3b3e-1068-4741-b1a6-fcc1cd90c52f">Gilles Doge</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=gido">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/b798fa08-18f3-4ba8-9e64-6f8fa1d5e00a"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/b798fa08-18f3-4ba8-9e64-6f8fa1d5e00a.png?format=40x40" alt="Henrik Bjørnskov"></a>
+                            </div>
+
+            <div>
+                59.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/b798fa08-18f3-4ba8-9e64-6f8fa1d5e00a">Henrik Bjørnskov</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=henrikbjorn">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/883d4cad-a141-47e7-9228-92ae587bfec3"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/883d4cad-a141-47e7-9228-92ae587bfec3.png?format=40x40" alt="Julien Brochet"></a>
+                            </div>
+
+            <div>
+                60.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/883d4cad-a141-47e7-9228-92ae587bfec3">Julien Brochet</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=aerialls">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/21c7abf2-a970-433e-be9a-d06fb9419d24"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/21c7abf2-a970-433e-be9a-d06fb9419d24.png?format=40x40" alt="Pascal Borreli"></a>
+                            </div>
+
+            <div>
+                61.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/21c7abf2-a970-433e-be9a-d06fb9419d24">Pascal Borreli</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=pborreli">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/3846c659-447e-491d-83c4-550b1ba098ce"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/3846c659-447e-491d-83c4-550b1ba098ce.png?format=40x40" alt="Douglas Greenshields"></a>
+                            </div>
+
+            <div>
+                62.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/3846c659-447e-491d-83c4-550b1ba098ce">Douglas Greenshields</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=shieldo">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/d0c833b0-f9ec-47b0-b9b2-b45f5c4f52f9"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/d0c833b0-f9ec-47b0-b9b2-b45f5c4f52f9.png?format=40x40" alt="Beau Simensen"></a>
+                            </div>
+
+            <div>
+                63.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/d0c833b0-f9ec-47b0-b9b2-b45f5c4f52f9">Beau Simensen</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=simensen">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/c81121f4-fd7a-49b0-9284-cef4b0dde8e7"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/c81121f4-fd7a-49b0-9284-cef4b0dde8e7.png?format=40x40" alt="Christophe Coevoet"></a>
+                            </div>
+
+            <div>
+                64.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/c81121f4-fd7a-49b0-9284-cef4b0dde8e7">Christophe Coevoet</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=stof">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/3eb94a8f-4212-451d-9058-2463ead0b423"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/3eb94a8f-4212-451d-9058-2463ead0b423.png?format=40x40" alt="Markus Tacker"></a>
+                            </div>
+
+            <div>
+                65.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/3eb94a8f-4212-451d-9058-2463ead0b423">Markus Tacker</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=tacker">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/75bcbdce-09b5-40b9-a86c-d1e4af2f95b8"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/75bcbdce-09b5-40b9-a86c-d1e4af2f95b8.png?format=40x40" alt="Geoffrey Bachelet"></a>
+                            </div>
+
+            <div>
+                66.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/75bcbdce-09b5-40b9-a86c-d1e4af2f95b8">Geoffrey Bachelet</a>
+                
+                <br />
+
+                <small>
+                                            <a href="https://github.com/fabpot/Silex/commits/master?author=ubermuda">1</a> commits
+                                        <small> &mdash; 2 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Shaun Kiernan">
+                            </div>
+
+            <div>
+                67.
+                                    Shaun Kiernan
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 1 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <img width="40" height="40" src="https://d48n5utym4v7z.cloudfront.net/40x40/images/avatar-default.png?v=1345472379" alt="Volker Dusch">
+                            </div>
+
+            <div>
+                68.
+                                    Volker Dusch
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 1 changes</small>
+                </small>
+            </div>
+        </li>
+            <li>
+            <div class="gravatar">
+                                    <a href="https://connect.sensiolabs.com/api/alternates/8e19859a-0970-4fd1-848f-d243189cdd35"><img width="40" height="40" src="https://connect.sensiolabs.com/api/images/8e19859a-0970-4fd1-848f-d243189cdd35.png?format=40x40" alt="Anthony Servedio"></a>
+                            </div>
+
+            <div>
+                69.
+                                    <a href="https://connect.sensiolabs.com/api/alternates/8e19859a-0970-4fd1-848f-d243189cdd35">Anthony Servedio</a>
+                
+                <br />
+
+                <small>
+                                            1 commits
+                                        <small> &mdash; 1 changes</small>
+                </small>
+            </div>
+        </li>
     </ol>
 
 <div class="clearfix"></div>

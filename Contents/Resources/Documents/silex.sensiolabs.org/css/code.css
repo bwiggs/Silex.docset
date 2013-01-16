@@ -453,6 +453,7 @@ div.configuration-block em
 {
     margin-bottom: 10px;
     overflow: auto;
+    max-width: 100%;
 }
 
 .highlighttable

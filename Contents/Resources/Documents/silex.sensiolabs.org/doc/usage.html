@@ -95,6 +95,7 @@
 <li><a class="reference internal" href="usage.html#requirements">Requirements</a></li>
 <li><a class="reference internal" href="usage.html#default-values">Default values</a></li>
 <li><a class="reference internal" href="usage.html#named-routes">Named routes</a></li>
+<li><a class="reference internal" href="usage.html#controllers-in-classes">Controllers in classes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="usage.html#global-configuration">Global Configuration</a></li>
@@ -273,9 +274,6 @@ PHP all anonymous functions are instances of the <tt class="docutils literal"><c
 will not make a distinction here.</p>
 </div></div>
 <p>The return value of the closure becomes the content of the page.</p>
-<p>There is also an alternate way for defining controllers using a class method.
-The syntax for that is <tt class="docutils literal"><code>ClassName::methodName</code></tt>. Static methods are also
-possible.</p>
 <div class="section" id="example-get-route">
 <h3>Example GET route<a class="headerlink" href="usage.html#example-get-route" title="Permalink to this headline">¶</a></h3>
 <p>Here is an example definition of a <tt class="docutils literal"><code>GET</code></tt> route:</p>
@@ -609,6 +607,48 @@ really be used. You can give a route a name by calling <tt class="docutils liter
 the <tt class="docutils literal"><code>RouteCollection</code></tt>.</p>
 </div></div>
 </div>
+<div class="section" id="controllers-in-classes">
+<h3>Controllers in classes<a class="headerlink" href="usage.html#controllers-in-classes" title="Permalink to this headline">¶</a></h3>
+<p>If you don't want to use anonymous functions, you can also define your
+controllers as methods. By using the <tt class="docutils literal"><code>ControllerClass::methodName</code></tt> syntax,
+you can tell Silex to lazily create that controller class for you:</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;Igorw\Foo::bar&#39;</span><span class="p">);</span>
+
+<span class="k">use</span> <span class="nx">Silex\Application</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Request</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nx">Igorw</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Foo</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Application</span> <span class="nv">$app</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="o">...</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>This will load the <tt class="docutils literal"><code>Igorw\Foo</code></tt> class on demand, create an instance and call
+the <tt class="docutils literal"><code>bar</code></tt> method to get the response. You can use <tt class="docutils literal"><code>Request</code></tt> and
+<tt class="docutils literal"><code>Silex\Application</code></tt> type hints to get <tt class="docutils literal"><code>$request</code></tt> and <tt class="docutils literal"><code>$app</code></tt> injected.</p>
+<p>For an even stronger separation between Silex and your controllers, you can
+<a class="reference internal" href="providers/service_controller.html"><em>define your controllers as services</em></a>.</p>
+</div>
 </div>
 <div class="section" id="global-configuration">
 <h2>Global Configuration<a class="headerlink" href="usage.html#global-configuration" title="Permalink to this headline">¶</a></h2>
@@ -627,8 +667,8 @@ middleware, a requirement, or a default value), you can configure it on
     <span class="o">-&gt;</span><span class="na">assert</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;\d+&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">requireHttps</span><span class="p">()</span>
     <span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// ... })</span>
-    <span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// ... })</span>
+    <span class="o">-&gt;</span><span class="na">convert</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">})</span>
+    <span class="o">-&gt;</span><span class="na">before</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">})</span>
 <span class="p">;</span>
 </pre></div>
 </td></tr></table></div></div>

@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow, all" />
+    <meta name="Author" content="Sensio Labs" />
+    <meta name="Language" content="en"/>
+    <meta name="Copyright" content="Sensio" />
+    <meta name="Publisher" content="Sensio" />
+    <meta name="Description" content="Silex - The PHP micro-framework based on Symfony2 Components" />
+    <meta name="Keywords" content="Silex, framework, micro-framework, php, symfony, components" />
+
+    <title>ServiceControllerServiceProvider - Documentation - Silex - The PHP micro-framework based on Symfony2 Components</title>
+
+    <link href="../../css/reset-min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/base.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/colors.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/code.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/pygments.css" rel="stylesheet" type="text/css" />
+
+    
+    <link href="http://connect.sensiolabs.com/css/sln.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript">
+        (function(w, d, s) {
+            function go() {
+                var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.src = url; js.id = id;
+                    fjs.parentNode.insertBefore(js, fjs);
+                };
+                load('https://connect.sensiolabs.com/sln.js?customize_url=/js/sln_customize.js', 'sln_bar');
+            }
+            if (w.addEventListener) { w.addEventListener("load", go, false); }
+            else if (w.attachEvent) { w.attachEvent("onload",go); }
+        } (window, document, 'script'));
+    </script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22504524-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="sln"></div>
+    <div class="hd">
+      <div class="illustration png_fix">
+        <div class="content">
+          <div class="sensio_product">
+            <img class="png_fix" src="../../images/sensio-labs-product.png" alt="a Sensio Labs Product" />
+          </div>
+          <div class="clearfix">
+            <div class="logo_header"><a href="../../index.html">SILEX</a></div>
+            <h1 class="title_header">
+              The PHP micro-framework<br />based on the Symfony2 Components
+            </h1>
+          </div>
+
+          <div class="menu">
+            <ul>
+                              <li><a class="active" href="../../documentation">DOCUMENTATION</a></li>
+              <li><a href="../../download">DOWNLOAD</a></li>
+              <li><a href="../../development">DEVELOPMENT</a></li>
+              <li><a href="../../contributors">CONTRIBUTORS</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="content">
+            <div class="infobar clearfix">
+                    <div id="doc-toc" class="infobar-box">
+            <h3>Table of Contents</h3>
+            <ul>
+<li><a class="reference internal" href="service_controller.html#">ServiceControllerServiceProvider</a><ul>
+<li><a class="reference internal" href="service_controller.html#why-would-i-want-to-do-this">Why would I want to do this?</a></li>
+<li><a class="reference internal" href="service_controller.html#parameters">Parameters</a></li>
+<li><a class="reference internal" href="service_controller.html#services">Services</a></li>
+<li><a class="reference internal" href="service_controller.html#registering">Registering</a></li>
+<li><a class="reference internal" href="service_controller.html#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+        
+        <div class="infobar-box">
+            <h3>Questions &amp; Feedback</h3>
+            <div class="feedback">
+                <p>
+                  <strong>Found a typo or an error?</strong><br />
+                  Want to improve this document? <a href="https://github.com/fabpot/Silex/edit/master/doc/providers/service_controller.rst">Edit</a> it.
+                </p>
+                <p>
+                  <strong>Need support or have a technical question?</strong><br />
+                  Post to the <a href="http://groups.google.com/group/silex-php">user mailing-list</a>.
+                 </p>
+            </div>
+
+            <h3>License</h3>
+            <div id="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" src="http://symfony.com/images/license.png" /></a>
+                Silex <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/MovingImage" rel="dc:type">documentation</span> is licensed under a
+                Creative Commons Attribution-Share Alike 3.0
+                Unported <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">License</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="body-web">
+        <div class="section" id="servicecontrollerserviceprovider">
+<h1>ServiceControllerServiceProvider<a class="headerlink" href="service_controller.html#servicecontrollerserviceprovider" title="Permalink to this headline">¶</a></h1>
+<p>As your Silex application grows, you may wish to begin organizing your
+controllers in a more formal fashion. Silex can use controller classes out of
+the box, but with a bit of work, your controllers can be created as services,
+giving you the full power of dependency injection and lazy loading.</p>
+<div class="section" id="why-would-i-want-to-do-this">
+<h2>Why would I want to do this?<a class="headerlink" href="service_controller.html#why-would-i-want-to-do-this" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Dependency Injection over Service Location</p>
+<p>Using this method, you can inject the actual dependencies required by your
+controller and gain total inversion of control, while still maintaining the
+lazy loading of your controllers and it's dependencies. Because your
+dependencies are clearly defined, they are easily mocked, allowing you to test
+your controllers in isolation.</p>
+</li>
+<li><p class="first">Framework Independence</p>
+<p>Using this method, your controllers start to become more independent of the
+framework you are using. Carefully crafted, your controllers will become
+reusable with multiple frameworks. By keeping careful control of your
+dependencies, your controllers could easily become compatible with Silex,
+Symfony (full stack) and Drupal, to name just a few.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="service_controller.html#parameters" title="Permalink to this headline">¶</a></h2>
+<p>There are currently no parameters for the <tt class="docutils literal"><code>ServiceControllerServiceProvider</code></tt>.</p>
+</div>
+<div class="section" id="services">
+<h2>Services<a class="headerlink" href="service_controller.html#services" title="Permalink to this headline">¶</a></h2>
+<p>There are no extra services provided, the <tt class="docutils literal"><code>ServiceControllerServiceProvider</code></tt>
+simply extends the existing <strong>resolver</strong> service.</p>
+</div>
+<div class="section" id="registering">
+<h2>Registering<a class="headerlink" href="service_controller.html#registering" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="k">new</span> <span class="nx">Silex\Provider\ServiceControllerServiceProvider</span><span class="p">());</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="service_controller.html#usage" title="Permalink to this headline">¶</a></h2>
+<p>In this slightly contrived example of a blog API, we're going to change the
+<tt class="docutils literal"><code>/posts.json</code></tt> route to use a controller, that is defined as a service.</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">use</span> <span class="nx">Silex\Application</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Demo\Repository\PostRepository</span><span class="p">;</span>
+
+<span class="nv">$app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">();</span>
+
+<span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;posts.repository&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">share</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">PostRepository</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/posts.json&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;posts.repository&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">());</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>Rewriting your controller as a service is pretty simple, create a Plain Ol' PHP
+Object with your <tt class="docutils literal"><code>PostRepository</code></tt> as a dependency, along with an
+<tt class="docutils literal"><code>indexJsonAction</code></tt> method to handle the request. Although not shown in the
+example below, you can use type hinting and parameter naming to get the
+parameters you need, just like with standard Silex routes.</p>
+<p>If you are a TDD/BDD fan (and you should be), you may notice that this
+controller has well defined responsibilities and dependencies, and is easily
+tested/specced. You may also notice that the only external dependency is on
+<tt class="docutils literal"><code>Symfony\Component\HttpFoundation\JsonResponse</code></tt>, meaning this controller could
+easily be used in a Symfony (full stack) application, or potentially with other
+applications or frameworks that know how to handle a <a class="reference external" href="http://symfony.com/doc/2.0/components/http_foundation/introduction.html">Symfony/HttpFoundation</a>
+<tt class="docutils literal"><code>Response</code></tt> object.</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">namespace</span> <span class="nx">Demo\Controller</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Demo\Repository\PostRepository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\JsonResponse</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">PostController</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$repo</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">PostRepository</span> <span class="nv">$repo</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">repo</span> <span class="o">=</span> <span class="nv">$repo</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">indexJsonAction</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">JsonResponse</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">repo</span><span class="o">-&gt;</span><span class="na">findAll</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div></div>
+<p>And lastly, define your controller as a service in the application, along with
+your route. The syntax in the route definition is the name of the service,
+followed by a single colon (:), followed by the method name.</p>
+<div class="literal-block"><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;posts.controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$app</span><span class="o">-&gt;</span><span class="na">share</span><span class="p">(</span><span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">PostController</span><span class="p">(</span><span class="nv">$app</span><span class="p">[</span><span class="s1">&#39;posts.repository&#39;</span><span class="p">]);</span>
+<span class="p">});</span>
+
+<span class="nv">$app</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/posts.json&#39;</span><span class="p">,</span> <span class="s2">&quot;posts.controller:indexJsonAction&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div></div>
+</div>
+</div>
+
+    </div>
+
+            <div class="navigation">
+                            <a accesskey="P" title="SerializerServiceProvider" href="serializer.html">
+                    &laquo;&nbsp;SerializerServiceProvider
+                </a>
+                        <span class="separator">|</span>                            <a accesskey="N" title="Webserver Configuration" href="../web_servers.html">
+                    Webserver Configuration&nbsp;&raquo;
+                </a>
+                    </div>
+          </div>
+      <div class="ft">
+        <div class="content">
+          This website is powered by Silex and Twig. The Silex <a href="../../images/logo.png">logo</a> is &copy; 2010,2011 Sensio Labs
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

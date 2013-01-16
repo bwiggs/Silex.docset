@@ -109,6 +109,8 @@
         <ul class="pages">
             <li><a href="doc/intro.html">Introduction</a></li>
             <li><a href="doc/usage.html">Usage</a></li>
+            <li><a href="doc/middlewares.html">Middlewares</a></li>
+            <li><a href="doc/organizing_controllers.html">Organizing Controllers</a></li>
             <li><a href="doc/services.html">Services</a></li>
             <li><a href="doc/providers.html">Providers</a></li>
             <li><a href="doc/testing.html">Testing</a></li>
@@ -137,6 +139,7 @@
             <li><a href="doc/providers/monolog.html">Monolog</a></li>
             <li><a href="doc/providers/translation.html">Translation</a></li>
             <li><a href="doc/providers/doctrine.html">Doctrine</a></li>
+            <li><a href="doc/providers/service_controller.html">Controllers as Services</a></li>
         </ul>
     </div>
 
